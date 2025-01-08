@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: purchasing
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: productvendor
+      - name: purchaseorderdetail
+      - name: purchaseorderheader
+      - name: shipmethod
+      - name: vendor
