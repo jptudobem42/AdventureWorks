@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'employeepayhistory') }}
+    select * from {{ source('sales', 'store') }}
 
 )
 
@@ -10,9 +10,10 @@ source as (
 
     select
         businessentityid
-        , ratechangedate
-        , rate
-        , payfrequency
+        , name
+        , salespersonid
+        , demographics
+        , rowguid
         , modifieddate
 
     from source

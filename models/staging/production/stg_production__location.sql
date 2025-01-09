@@ -2,17 +2,17 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'shift') }}
+    select * from {{ source('production', 'location') }}
 
 )
 
 , renamed as (
 
     select
-        shiftid
+        locationid
         , name
-        , starttime
-        , endtime
+        , costrate
+        , availability
         , modifieddate
 
     from source

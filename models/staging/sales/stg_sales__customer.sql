@@ -2,17 +2,17 @@ with
 
 source as (
 
-    select * from {{ source('purchasing', 'shipmethod') }}
+    select * from {{ source('sales', 'customer') }}
 
 )
 
 , renamed as (
 
     select
-        shipmethodid
-        , name
-        , shipbase
-        , shiprate
+        customerid
+        , personid
+        , storeid
+        , territoryid
         , rowguid
         , modifieddate
 

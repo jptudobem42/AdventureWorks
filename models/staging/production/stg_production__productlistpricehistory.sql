@@ -2,18 +2,17 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'employeedepartmenthistory') }}
+    select * from {{ source('production', 'productlistpricehistory') }}
 
 )
 
 , renamed as (
 
     select
-        businessentityid
-        , departmentid
-        , shiftid
+        productid
         , startdate
         , enddate
+        , listprice
         , modifieddate
 
     from source

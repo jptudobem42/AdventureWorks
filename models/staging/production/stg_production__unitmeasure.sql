@@ -2,17 +2,15 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'shift') }}
+    select * from {{ source('production', 'unitmeasure') }}
 
 )
 
 , renamed as (
 
     select
-        shiftid
+        unitmeasurecode
         , name
-        , starttime
-        , endtime
         , modifieddate
 
     from source

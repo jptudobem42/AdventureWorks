@@ -1,18 +1,18 @@
-with 
+with
 
 source as (
 
     select * from {{ source('humanresources', 'jobcandidate') }}
 
-),
+)
 
-renamed as (
+, renamed as (
 
     select
-        jobcandidateid,
-        businessentityid,
-        resume,
-        modifieddate
+        jobcandidateid
+        , businessentityid
+        , resume
+        , modifieddate
 
     from source
 

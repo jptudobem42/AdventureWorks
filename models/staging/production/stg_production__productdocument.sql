@@ -2,17 +2,16 @@ with
 
 source as (
 
-    select * from {{ source('person', 'addresstype') }}
+    select * from {{ source('production', 'productdocument') }}
 
 )
 
 , renamed as (
 
     select
-        addresstypeid
-        , name
-        , rowguid
+        productid
         , modifieddate
+        , documentnode
 
     from source
 

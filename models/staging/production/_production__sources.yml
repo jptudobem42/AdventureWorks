@@ -7,7 +7,6 @@ sources:
     tables:
       - name: billofmaterials
       - name: culture
-      - name: document
       - name: illustration
       - name: location
       - name: product

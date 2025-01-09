@@ -2,17 +2,15 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'shift') }}
+    select * from {{ source('production', 'scrapreason') }}
 
 )
 
 , renamed as (
 
     select
-        shiftid
+        scrapreasonid
         , name
-        , starttime
-        , endtime
         , modifieddate
 
     from source

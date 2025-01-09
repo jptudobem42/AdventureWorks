@@ -2,17 +2,18 @@ with
 
 source as (
 
-    select * from {{ source('purchasing', 'shipmethod') }}
+    select * from {{ source('sales', 'salestaxrate') }}
 
 )
 
 , renamed as (
 
     select
-        shipmethodid
+        salestaxrateid
+        , stateprovinceid
+        , taxtype
+        , taxrate
         , name
-        , shipbase
-        , shiprate
         , rowguid
         , modifieddate
 

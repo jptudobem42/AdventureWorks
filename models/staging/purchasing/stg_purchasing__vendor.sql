@@ -1,22 +1,22 @@
-with 
+with
 
 source as (
 
     select * from {{ source('purchasing', 'vendor') }}
 
-),
+)
 
-renamed as (
+, renamed as (
 
     select
-        businessentityid,
-        accountnumber,
-        name,
-        creditrating,
-        preferredvendorstatus,
-        activeflag,
-        purchasingwebserviceurl,
-        modifieddate
+        businessentityid
+        , accountnumber
+        , name
+        , creditrating
+        , preferredvendorstatus
+        , activeflag
+        , purchasingwebserviceurl
+        , modifieddate
 
     from source
 

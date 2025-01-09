@@ -1,19 +1,19 @@
-with 
+with
 
 source as (
 
     select * from {{ source('person', 'businessentitycontact') }}
 
-),
+)
 
-renamed as (
+, renamed as (
 
     select
-        businessentityid,
-        personid,
-        contacttypeid,
-        rowguid,
-        modifieddate
+        businessentityid
+        , personid
+        , contacttypeid
+        , rowguid
+        , modifieddate
 
     from source
 

@@ -2,16 +2,15 @@ with
 
 source as (
 
-    select * from {{ source('person', 'addresstype') }}
+    select * from {{ source('production', 'illustration') }}
 
 )
 
 , renamed as (
 
     select
-        addresstypeid
-        , name
-        , rowguid
+        illustrationid
+        , diagram
         , modifieddate
 
     from source

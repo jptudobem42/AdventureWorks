@@ -2,17 +2,15 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'shift') }}
+    select * from {{ source('sales', 'currency') }}
 
 )
 
 , renamed as (
 
     select
-        shiftid
+        currencycode
         , name
-        , starttime
-        , endtime
         , modifieddate
 
     from source

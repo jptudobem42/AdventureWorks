@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('humanresources', 'employeedepartmenthistory') }}
+    select * from {{ source('sales', 'salesterritoryhistory') }}
 
 )
 
@@ -10,10 +10,10 @@ source as (
 
     select
         businessentityid
-        , departmentid
-        , shiftid
+        , territoryid
         , startdate
         , enddate
+        , rowguid
         , modifieddate
 
     from source

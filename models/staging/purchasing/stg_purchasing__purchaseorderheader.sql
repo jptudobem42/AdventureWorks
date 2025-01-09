@@ -1,26 +1,26 @@
-with 
+with
 
 source as (
 
     select * from {{ source('purchasing', 'purchaseorderheader') }}
 
-),
+)
 
-renamed as (
+, renamed as (
 
     select
-        purchaseorderid,
-        revisionnumber,
-        status,
-        employeeid,
-        vendorid,
-        shipmethodid,
-        orderdate,
-        shipdate,
-        subtotal,
-        taxamt,
-        freight,
-        modifieddate
+        purchaseorderid
+        , revisionnumber
+        , status
+        , employeeid
+        , vendorid
+        , shipmethodid
+        , orderdate
+        , shipdate
+        , subtotal
+        , taxamt
+        , freight
+        , modifieddate
 
     from source
 
