@@ -1,0 +1,134 @@
+version: 2
+
+models:
+  - name: product
+    description: "Tabela contendo informações sobre os produtos fabricados pela empresa, incluindo características, custos e categorias."
+    columns:
+      - name: productid
+        description: "Identificador único do produto."
+      - name: name
+        description: "Nome do produto."
+      - name: productnumber
+        description: "Código de identificação do produto."
+      - name: color
+        description: "Cor do produto, se aplicável."
+      - name: standardcost
+        description: "Custo padrão de fabricação do produto."
+      - name: listprice
+        description: "Preço de venda do produto."
+      - name: productcategoryid
+        description: "ID da categoria à qual o produto pertence."
+      - name: productmodelid
+        description: "ID do modelo do produto, se aplicável."
+      - name: sellstartdate
+        description: "Data de início das vendas do produto."
+      - name: sellenddate
+        description: "Data de término das vendas do produto, se aplicável."
+      - name: discontinueddate
+        description: "Data em que o produto foi descontinuado, se aplicável."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: productcategory
+    description: "Tabela que armazena informações sobre as categorias dos produtos."
+    columns:
+      - name: productcategoryid
+        description: "Identificador único da categoria de produto."
+      - name: name
+        description: "Nome da categoria de produto."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: productmodel
+    description: "Tabela que armazena informações sobre os modelos de produtos."
+    columns:
+      - name: productmodelid
+        description: "Identificador único do modelo de produto."
+      - name: name
+        description: "Nome do modelo de produto."
+      - name: catalogdescription
+        description: "Descrição detalhada do modelo de produto para o catálogo."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: billofmaterials
+    description: "Tabela que define os componentes necessários para a fabricação de cada produto."
+    columns:
+      - name: billofmaterialsid
+        description: "Identificador único do registro da lista de materiais."
+      - name: productassemblyid
+        description: "ID do produto montado."
+      - name: componentid
+        description: "ID do componente necessário para a montagem."
+      - name: perassemblyqty
+        description: "Quantidade necessária do componente por montagem."
+      - name: startdate
+        description: "Data de início da validade deste registro na lista de materiais."
+      - name: enddate
+        description: "Data de término da validade deste registro na lista de materiais."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: workorder
+    description: "Tabela que armazena ordens de produção para fabricação de produtos."
+    columns:
+      - name: workorderid
+        description: "Identificador único da ordem de produção."
+      - name: productid
+        description: "ID do produto a ser fabricado."
+      - name: orderqty
+        description: "Quantidade de produtos a serem fabricados."
+      - name: startdate
+        description: "Data de início da ordem de produção."
+      - name: enddate
+        description: "Data de término da ordem de produção."
+      - name: duedate
+        description: "Data de vencimento da ordem de produção."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: productreview
+    description: "Tabela que armazena avaliações feitas pelos clientes sobre os produtos."
+    columns:
+      - name: productreviewid
+        description: "Identificador único da avaliação."
+      - name: productid
+        description: "ID do produto avaliado."
+      - name: reviewername
+        description: "Nome da pessoa que realizou a avaliação."
+      - name: rating
+        description: "Classificação do produto, em uma escala de 1 a 5."
+      - name: comments
+        description: "Comentários adicionais sobre o produto."
+      - name: reviewdate
+        description: "Data em que a avaliação foi realizada."
+
+  - name: location
+    description: "Tabela que armazena informações sobre os locais onde os produtos são armazenados ou produzidos."
+    columns:
+      - name: locationid
+        description: "Identificador único do local."
+      - name: name
+        description: "Nome do local."
+      - name: costrate
+        description: "Taxa de custo associada ao local."
+      - name: availability
+        description: "Percentual de disponibilidade do local."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: productinventory
+    description: "Tabela que armazena informações sobre os estoques de produtos em diferentes locais."
+    columns:
+      - name: productid
+        description: "ID do produto em estoque."
+      - name: locationid
+        description: "ID do local onde o produto está armazenado."
+      - name: shelf
+        description: "Prateleira onde o produto está armazenado."
+      - name: bin
+        description: "Número do compartimento onde o produto está armazenado."
+      - name: quantity
+        description: "Quantidade de produtos em estoque."
+      - name: modifieddate
+        description: "Data da última modificação do registro."

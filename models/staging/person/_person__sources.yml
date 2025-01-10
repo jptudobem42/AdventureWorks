@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: person
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: address
+      - name: addresstype
+      - name: businessentity
+      - name: businessentityaddress
+      - name: businessentitycontact
+      - name: contacttype
+      - name: countryregion
+      - name: emailaddress
+      - name: person
+      - name: personphone
+      - name: phonenumbertype
+      - name: stateprovince

@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'adventureworks'
 version: '1.0.0'
 config-version: 2
 
@@ -36,7 +36,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+  adventureworks:
+    staging:
+      +schema: "{{ 'DEV_JPCARNEIRO_STG' if target.name == 'dev' else 'PROD_JPCARNEIRO_STG' }}"
+      +materialized: view
+    intermediate:
+      +schema: "{{ 'DEV_JPCARNEIRO_INT' if target.name == 'dev' else 'PROD_JPCARNEIRO_INT' }}"
+      +materialized: view
+    marts:
+      +schema: "{{ 'DEV_JPCARNEIRO_MARTS' if target.name == 'dev' else 'PROD_JPCARNEIRO_MARTS' }}"
+      +materialized: "{{ 'view' if target.name == 'dev' else 'table' }}"  
+
+vars:
+  start_date: '2010-01-01'
+  end_date: '2015-12-31'
