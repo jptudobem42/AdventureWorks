@@ -9,15 +9,15 @@ source as (
 , renamed as (
 
     select
-        billofmaterialsid
-        , productassemblyid
-        , componentid
-        , startdate
-        , enddate
-        , unitmeasurecode
-        , bomlevel
-        , perassemblyqty
-        , modifieddate
+        'billofmaterialsid'
+        , 'productassemblyid'
+        , 'componentid'
+        , 'startdate'
+        , 'enddate'
+        , 'unitmeasurecode'
+        , 'bomlevel'
+        , 'perassemblyqty'
+        , 'modifieddate'
 
     from source
 

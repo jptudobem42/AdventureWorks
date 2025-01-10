@@ -9,11 +9,11 @@ source as (
 , renamed as (
 
     select
-        locationid
-        , name
-        , costrate
-        , availability
-        , modifieddate
+        'locationid'
+        , 'name'
+        , 'costrate'
+        , 'availability'
+        , 'modifieddate'
 
     from source
 
