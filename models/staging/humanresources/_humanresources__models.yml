@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: department
+    description: "Tabela que armazena informações sobre os departamentos da empresa, incluindo nomes e grupos aos quais pertencem."
+    columns:
+      - name: departmentid
+        description: "Identificador único do departamento."
+      - name: name
+        description: "Nome do departamento."
+      - name: groupname
+        description: "Nome do grupo ao qual o departamento pertence."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: employee
+    description: "Tabela contendo informações sobre os empregados da organização, incluindo detalhes de cargo, contratação e gerência."
+    columns:
+      - name: employeeid
+        description: "Identificador único do empregado."
+      - name: nationalidnumber
+        description: "Número de identificação nacional do empregado."
+      - name: jobtitle
+        description: "Título do cargo do empregado."
+      - name: birthdate
+        description: "Data de nascimento do empregado."
+      - name: hiredate
+        description: "Data de contratação do empregado."
+      - name: gender
+        description: "Gênero do empregado. Valores possíveis: M (masculino) e F (feminino)."
+      - name: maritalstatus
+        description: "Estado civil do empregado. Valores possíveis: M (casado) e S (solteiro)."
+      - name: departmentid
+        description: "ID do departamento ao qual o empregado está alocado."
+      - name: managerid
+        description: "ID do gerente responsável pelo empregado, se aplicável."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: jobcandidate
+    description: "Tabela contendo informações sobre candidatos a vagas de emprego na organização."
+    columns:
+      - name: jobcandidateid
+        description: "Identificador único do candidato."
+      - name: employeeid
+        description: "ID do empregado associado, caso o candidato tenha sido contratado."
+      - name: resume
+        description: "Resumo (currículo) do candidato em formato XML."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: shift
+    description: "Tabela que define os turnos de trabalho disponíveis para os empregados."
+    columns:
+      - name: shiftid
+        description: "Identificador único do turno."
+      - name: name
+        description: "Nome do turno, por exemplo, Dia, Tarde ou Noite."
+      - name: starttime
+        description: "Hora de início do turno."
+      - name: endtime
+        description: "Hora de término do turno."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: employeedepartmenthistory
+    description: "Tabela que registra o histórico de alocações dos empregados nos departamentos."
+    columns:
+      - name: employeeid
+        description: "ID do empregado ao qual o histórico se refere."
+      - name: departmentid
+        description: "ID do departamento associado ao registro histórico."
+      - name: shiftid
+        description: "ID do turno associado ao registro histórico."
+      - name: startdate
+        description: "Data de início da alocação no departamento."
+      - name: enddate
+        description: "Data de término da alocação no departamento, se aplicável."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
+
+  - name: employeepayhistory
+    description: "Tabela que registra o histórico de salários dos empregados."
+    columns:
+      - name: employeeid
+        description: "ID do empregado associado ao registro de pagamento."
+      - name: ratechangedate
+        description: "Data em que a taxa de pagamento foi alterada."
+      - name: rate
+        description: "Valor da taxa de pagamento do empregado."
+      - name: payfrequency
+        description: "Frequência de pagamento. Valores possíveis: 1 (mensal) e 2 (semanal)."
+      - name: modifieddate
+        description: "Data da última modificação do registro."
