@@ -9,10 +9,10 @@ source as (
 , renamed as (
 
     select
-        departmentid
+        departmentid as id_department
         , name
         , groupname
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

@@ -9,11 +9,11 @@ source as (
 , renamed as (
 
     select
-        shiftid
+        shiftid as id_shiftid
         , name
         , starttime
         , endtime
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

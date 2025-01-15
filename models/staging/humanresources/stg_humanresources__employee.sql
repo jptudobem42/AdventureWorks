@@ -9,21 +9,30 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
+        , loginid as id_login
         , nationalidnumber
-        , loginid
         , jobtitle
         , birthdate
-        , maritalstatus
-        , gender
-        , hiredate
+        , {{ create_age_range(birth_date_column='birthdate') }}
+        , case 
+            when maritalstatus = 'M' then 'CASADO'
+            when maritalstatus = 'S' then 'SOLTEIRO'
+            else 'OUTRO'
+        end estado_civil
+        , hiredate as dt_hire
         , salariedflag
         , vacationhours
         , sickleavehours
         , currentflag
         , rowguid
-        , modifieddate
         , organizationnode
+        , case
+            when gender = 'M' then 'MASCULINO'
+            when gender = 'F' then 'FEMININO'
+            else 'OUTRO'
+        end as sexo
+        , modifieddate as dt_modified
 
     from source
 

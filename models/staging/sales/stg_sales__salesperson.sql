@@ -9,15 +9,15 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , territoryid
+        businessentityid as id_businessentity
+        , territoryid as id_territory
         , salesquota
         , bonus
         , commissionpct
         , salesytd
         , saleslastyear
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

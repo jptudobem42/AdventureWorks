@@ -9,14 +9,14 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
         , accountnumber
         , name
         , creditrating
         , preferredvendorstatus
         , activeflag
         , purchasingwebserviceurl
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

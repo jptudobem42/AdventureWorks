@@ -9,9 +9,9 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

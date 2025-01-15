@@ -9,12 +9,12 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , departmentid
-        , shiftid
+        businessentityid as id_businessentity
+        , departmentid as id_department
+        , shiftid as id_shift
         , startdate
         , enddate
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

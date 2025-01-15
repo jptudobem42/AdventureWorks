@@ -1,10 +1,3 @@
-{{
-    config(
-        materialized = "view"
-    )
-}}
-
-
 with
 dim_dates as (
 

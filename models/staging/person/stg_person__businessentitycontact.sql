@@ -9,11 +9,11 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , personid
-        , contacttypeid
+        businessentityid as id_businessentity
+        , personid as id_person
+        , contacttypeid as id_contacttype
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

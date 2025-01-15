@@ -9,12 +9,12 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , territoryid
-        , startdate
-        , enddate
+        businessentityid as id_businessentity
+        , territoryid as id_territory
+        , date(startdate) as dt_start
+        , date(enddate) as dt_end
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

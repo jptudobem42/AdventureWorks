@@ -4,15 +4,15 @@ models:
   - name: salesorderheader
     description: "Tabela que armazena informações gerais sobre pedidos de venda realizados pelos clientes."
     columns:
-      - name: salesorderid
+      - name: id_salesorder
         description: "Identificador único do pedido de venda."
       - name: revisionnumber
         description: "Número de revisão do pedido de venda."
       - name: orderdate
         description: "Data em que o pedido foi realizado."
-      - name: duedate
+      - name: dt_due
         description: "Data de vencimento do pedido."
-      - name: shipdate
+      - name: dt_ship
         description: "Data de envio do pedido."
       - name: status
         description: "Status do pedido (1 = Criado, 2 = Processado, 3 = Enviado)."
@@ -24,19 +24,19 @@ models:
         description: "Número do pedido de compra associado."
       - name: accountnumber
         description: "Número da conta associada ao pedido."
-      - name: customerid
+      - name: id_customer
         description: "ID do cliente que realizou o pedido."
-      - name: salespersonid
+      - name: id_salesperson
         description: "ID do vendedor responsável pelo pedido."
-      - name: territoryid
+      - name: id_territory
         description: "ID da região de vendas associada ao pedido."
-      - name: shiptoaddressid
+      - name: id_shiptoaddress
         description: "ID do endereço para envio do pedido."
-      - name: billtoaddressid
+      - name: id_billtoaddress
         description: "ID do endereço para faturamento do pedido."
-      - name: shipmethodid
+      - name: id_shipmethod
         description: "ID do método de envio utilizado."
-      - name: creditcardid
+      - name: id_creditcard
         description: "ID do cartão de crédito utilizado para o pagamento."
       - name: creditcardapprovalcode
         description: "Código de aprovação do pagamento com cartão de crédito."
@@ -50,23 +50,23 @@ models:
         description: "Valor total do pedido, incluindo frete e impostos."
       - name: comment
         description: "Comentários adicionais sobre o pedido."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: salesorderdetail
     description: "Tabela que armazena detalhes dos itens incluídos em cada pedido de venda."
     columns:
-      - name: salesorderid
+      - name: id_salesorder
         description: "ID do pedido de venda ao qual o item pertence."
-      - name: salesorderdetailid
+      - name: id_salesorderdetail
         description: "Identificador único do item no pedido."
       - name: carriertrackingnumber
         description: "Número de rastreamento do transportador para o item."
       - name: orderqty
         description: "Quantidade do item pedida."
-      - name: productid
+      - name: id_product
         description: "ID do produto incluído no pedido."
-      - name: specialofferid
+      - name: id_specialoffer
         description: "ID de qualquer promoção ou desconto aplicado ao item."
       - name: unitprice
         description: "Preço unitário do item no pedido."
@@ -74,31 +74,31 @@ models:
         description: "Desconto aplicado ao preço unitário do item."
       - name: linetotal
         description: "Valor total da linha do pedido (quantidade x preço unitário - descontos)."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: customer
     description: "Tabela que armazena informações sobre os clientes que realizaram pedidos de venda."
     columns:
-      - name: customerid
+      - name: id_customer
         description: "Identificador único do cliente."
-      - name: personid
+      - name: id_person
         description: "ID da pessoa associada ao cliente, se aplicável."
-      - name: storeid
+      - name: id_store
         description: "ID da loja associada ao cliente, se aplicável."
-      - name: territoryid
+      - name: id_territory
         description: "ID da região de vendas associada ao cliente."
       - name: accountnumber
         description: "Número da conta do cliente."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: salesperson
     description: "Tabela que armazena informações sobre os vendedores da empresa."
     columns:
-      - name: salespersonid
+      - name: id_salesperson
         description: "Identificador único do vendedor."
-      - name: territoryid
+      - name: id_territory
         description: "ID da região de vendas na qual o vendedor atua."
       - name: salesquota
         description: "Meta de vendas estabelecida para o vendedor."
@@ -110,19 +110,19 @@ models:
         description: "Total de vendas do vendedor no ano até a data (Year-To-Date)."
       - name: saleslastyear
         description: "Total de vendas do vendedor no ano anterior."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: salesterritory
     description: "Tabela que armazena informações sobre as regiões de vendas da empresa."
     columns:
-      - name: territoryid
+      - name: id_territory
         description: "Identificador único da região de vendas."
       - name: name
         description: "Nome da região de vendas."
       - name: countryregioncode
         description: "Código do país ou região associado à região de vendas."
-      - name: group
+      - name: grupo
         description: "Grupo ao qual a região de vendas pertence."
       - name: salesytd
         description: "Total de vendas na região no ano até a data (Year-To-Date)."
@@ -132,19 +132,19 @@ models:
         description: "Custo total na região no ano até a data."
       - name: costlastyear
         description: "Custo total na região no ano anterior."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: store
     description: "Tabela que armazena informações sobre as lojas que atuam como clientes da empresa."
     columns:
-      - name: storeid
+      - name: id_store
         description: "Identificador único da loja."
       - name: name
         description: "Nome da loja."
-      - name: salespersonid
+      - name: id_salesperson
         description: "ID do vendedor responsável pela loja."
       - name: demographics
         description: "Informações demográficas associadas à loja."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."

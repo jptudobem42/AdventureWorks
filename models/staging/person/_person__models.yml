@@ -4,7 +4,7 @@ models:
   - name: person
     description: "Tabela que armazena informações sobre indivíduos, incluindo dados básicos e de contato."
     columns:
-      - name: businessentityid
+      - name: id_businessentity
         description: "Identificador único do indivíduo, associado à entidade de negócios."
       - name: persontype
         description: "Tipo da pessoa. Pode ser cliente (EM, IN) ou funcionário (GC, SP)."
@@ -20,13 +20,13 @@ models:
         description: "Último nome ou sobrenome da pessoa."
       - name: emailpromotion
         description: "Indica se a pessoa optou por receber promoções por e-mail (0 para não, 1 para sim)."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: address
     description: "Tabela que armazena informações sobre endereços utilizados por pessoas e empresas."
     columns:
-      - name: addressid
+      - name: id_address
         description: "Identificador único do endereço."
       - name: addressline1
         description: "Primeira linha do endereço, como rua e número."
@@ -34,21 +34,21 @@ models:
         description: "Segunda linha do endereço, como complemento ou unidade."
       - name: city
         description: "Nome da cidade do endereço."
-      - name: stateprovinceid
+      - name: id_stateprovince
         description: "Identificador do estado ou província associado ao endereço."
       - name: postalcode
         description: "Código postal ou CEP do endereço."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: contacttype
     description: "Tabela que define os tipos de contatos utilizados pela organização."
     columns:
-      - name: contacttypeid
+      - name: id_contacttype
         description: "Identificador único do tipo de contato."
       - name: name
         description: "Nome do tipo de contato, como Cliente, Fornecedor ou Parceiro."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: countryregion
@@ -58,35 +58,35 @@ models:
         description: "Código do país ou região, em formato ISO."
       - name: name
         description: "Nome do país ou região."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: emailaddress
     description: "Tabela que armazena os endereços de e-mail associados a indivíduos ou empresas."
     columns:
-      - name: businessentityid
+      - name: id_businessentity
         description: "Identificador único da entidade de negócios à qual o e-mail está associado."
-      - name: emailaddressid
+      - name: id_emailaddress
         description: "Identificador único do endereço de e-mail."
       - name: emailaddress
         description: "Endereço de e-mail."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: phonenumbertype
     description: "Tabela que define os diferentes tipos de números de telefone utilizados pela organização."
     columns:
-      - name: phonenumbertypeid
+      - name: id_phonenumbertype
         description: "Identificador único do tipo de número de telefone."
       - name: name
         description: "Nome do tipo de número de telefone, como Residencial, Comercial ou Celular."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: stateprovince
     description: "Tabela que armazena informações sobre estados ou províncias, incluindo associação a países."
     columns:
-      - name: stateprovinceid
+      - name: id_stateprovince
         description: "Identificador único do estado ou província."
       - name: stateprovincecode
         description: "Código do estado ou província."
@@ -94,29 +94,29 @@ models:
         description: "Código do país ou região ao qual o estado pertence."
       - name: name
         description: "Nome do estado ou província."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: businessentityaddress
     description: "Tabela que define o relacionamento entre entidades de negócios e endereços."
     columns:
-      - name: businessentityid
+      - name: id_businessentity
         description: "Identificador único da entidade de negócios associada ao endereço."
-      - name: addressid
+      - name: id_address
         description: "ID do endereço associado à entidade de negócios."
-      - name: addresstypeid
+      - name: id_addresstype
         description: "ID do tipo de endereço, como Comercial ou Residencial."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."
 
   - name: personphone
     description: "Tabela que armazena os números de telefone associados às pessoas."
     columns:
-      - name: businessentityid
+      - name: id_businessentity
         description: "Identificador único da entidade de negócios à qual o telefone está associado."
       - name: phonenumber
         description: "Número de telefone."
-      - name: phonenumbertypeid
+      - name: id_phonenumbertype
         description: "ID do tipo de número de telefone."
-      - name: modifieddate
+      - name: dt_modified
         description: "Data da última modificação do registro."

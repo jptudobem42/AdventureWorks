@@ -9,9 +9,9 @@ source as (
 , renamed as (
 
     select
-        contacttypeid
+        contacttypeid as id_contacttype
         , name
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

@@ -9,16 +9,16 @@ source as (
 , renamed as (
 
     select
-        salesorderid
-        , salesorderdetailid
+        salesorderid as id_salesorder
+        , salesorderdetailid as id_salesorderdetail
+        , productid as id_product
+        , specialofferid as id_specialoffer
         , carriertrackingnumber
-        , orderqty
-        , productid
-        , specialofferid
+        , orderqty as qty_order
         , unitprice
         , unitpricediscount
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 
