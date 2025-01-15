@@ -9,9 +9,9 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , creditcardid
-        , modifieddate
+        businessentityid as id_businessentity
+        , creditcardid as id_creditcard
+        , modifieddate as dt_modified
 
     from source
 

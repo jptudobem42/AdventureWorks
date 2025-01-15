@@ -9,11 +9,11 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , ratechangedate
+        businessentityid as id_businessentity
+        , date(ratechangedate) as dt_ratechange
         , rate
         , payfrequency
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

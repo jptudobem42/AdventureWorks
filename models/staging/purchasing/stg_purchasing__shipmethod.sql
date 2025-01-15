@@ -9,12 +9,12 @@ source as (
 , renamed as (
 
     select
-        shipmethodid
+        shipmethodid as id_shipmethod
         , name
         , shipbase
         , shiprate
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

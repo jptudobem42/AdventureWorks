@@ -9,13 +9,13 @@ source as (
 , renamed as (
 
     select
-        salestaxrateid
-        , stateprovinceid
+        salestaxrateid as id_salestaxrate
+        , stateprovinceid as id_stateprovince
         , taxtype
         , taxrate
         , name
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

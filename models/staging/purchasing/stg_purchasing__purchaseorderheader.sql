@@ -9,18 +9,18 @@ source as (
 , renamed as (
 
     select
-        purchaseorderid
+        purchaseorderid as id_purchaseorder
+        , employeeid as id_employee
+        , vendorid as id_vendor
+        , shipmethodid as id_shipmethod
         , revisionnumber
         , status
-        , employeeid
-        , vendorid
-        , shipmethodid
         , orderdate
         , shipdate
         , subtotal
         , taxamt
         , freight
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

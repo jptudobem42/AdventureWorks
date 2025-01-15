@@ -9,10 +9,10 @@ source as (
 , renamed as (
 
     select
-        addresstypeid
+        addresstypeid as id_addresstype
         , name
         , rowguid
-        , modifieddate
+        , date(modifieddate) as dt_modified
 
     from source
 

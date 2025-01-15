@@ -9,10 +9,10 @@ source as (
 , renamed as (
 
     select
-        jobcandidateid
-        , businessentityid
+        jobcandidateid as id_jobcandidate
+        , businessentityid as id_businessentity
         , resume
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

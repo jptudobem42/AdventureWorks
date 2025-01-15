@@ -9,7 +9,7 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
         , persontype
         , namestyle
         , title
@@ -21,7 +21,7 @@ source as (
         , additionalcontactinfo
         , demographics
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

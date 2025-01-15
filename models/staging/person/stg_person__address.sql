@@ -9,15 +9,15 @@ source as (
 , renamed as (
 
     select
-        addressid
+        addressid as id_address
+        , stateprovinceid as id_stateprovince
         , addressline1
         , addressline2
         , city
-        , stateprovinceid
         , postalcode
         , spatiallocation
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

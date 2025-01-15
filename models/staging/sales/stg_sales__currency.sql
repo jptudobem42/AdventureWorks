@@ -11,7 +11,7 @@ source as (
     select
         currencycode
         , name
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

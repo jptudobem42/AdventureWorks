@@ -9,17 +9,17 @@ source as (
 , renamed as (
 
     select
-        productid
-        , businessentityid
+        productid as id_product
+        , businessentityid as id_businessentity
         , averageleadtime
         , standardprice
         , lastreceiptcost
         , lastreceiptdate
-        , minorderqty
-        , maxorderqty
-        , onorderqty
+        , minorderqty as qty_minorder
+        , maxorderqty as qty_maxorder
+        , onorderqty as qty_onorder
         , unitmeasurecode
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

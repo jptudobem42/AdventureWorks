@@ -9,13 +9,13 @@ source as (
 , renamed as (
 
     select
-        currencyrateid
-        , currencyratedate
+        currencyrateid as id_currencyrate
+        , date(currencyratedate) as dt_currencyrate
         , fromcurrencycode
         , tocurrencycode
         , averagerate
         , endofdayrate
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

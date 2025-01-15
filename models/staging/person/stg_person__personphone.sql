@@ -9,10 +9,10 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
+        , phonenumbertypeid as id_phonenumbertype
         , phonenumber
-        , phonenumbertypeid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

@@ -9,11 +9,11 @@ source as (
 , renamed as (
 
     select
-        businessentityid
-        , quotadate
+        businessentityid as id_businessentity
+        , date(quotadate) as dt_quota
         , salesquota
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

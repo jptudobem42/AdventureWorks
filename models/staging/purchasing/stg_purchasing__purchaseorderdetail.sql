@@ -9,15 +9,15 @@ source as (
 , renamed as (
 
     select
-        'purchaseorderid'
-        , 'purchaseorderdetailid'
-        , 'duedate'
-        , 'orderqty'
-        , 'productid'
-        , 'unitprice'
-        , 'receivedqty'
-        , 'rejectedqty'
-        , 'modifieddate'
+        "purchaseorderid" as id_purchaseorder
+        , "purchaseorderdetailid" as id_purchaseorderdetail
+        , "productid" as id_product
+        , "duedate" as duedate
+        , "unitprice" as unitprice
+        , "orderqty" as qty_order
+        , "receivedqty" as qty_received
+        , "rejectedqty" as qty_rejected
+        , "modifieddate" as dt_modified
 
     from source
 

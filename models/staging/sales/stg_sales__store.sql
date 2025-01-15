@@ -9,12 +9,12 @@ source as (
 , renamed as (
 
     select
-        businessentityid
+        businessentityid as id_businessentity
         , name
-        , salespersonid
+        , salespersonid as id_salesperson
         , demographics
         , rowguid
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 

@@ -9,9 +9,9 @@ source as (
 , renamed as (
 
     select
-        phonenumbertypeid
+        phonenumbertypeid as id_phonenumbertype
         , name
-        , modifieddate
+        , modifieddate as dt_modified
 
     from source
 
