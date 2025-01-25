@@ -12,5 +12,4 @@ sources:
       - name: salesorderheadersalesreason
       - name: salesreason
       - name: salesperson
-      - name: salesterritory
       - name: store

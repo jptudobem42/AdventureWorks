@@ -15,9 +15,9 @@ cartaocredito as (
 )
 
 select
-    {{ dbt_utils.generate_surrogate_key(['cartaocredito.creditcardid'])}} as sk_cartaocredito
-    , cartaocredito.creditcardid
+    {{ dbt_utils.generate_surrogate_key(['salesorderheader.creditcardid'])}} as sk_cartaocredito
+    , salesorderheader.creditcardid
     , cartaocredito.cardtype
 from salesorderheader
-inner join cartaocredito
+left join cartaocredito
     on cartaocredito.creditcardid = salesorderheader.creditcardid

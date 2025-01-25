@@ -16,13 +16,13 @@ source as (
         , billtoaddressid
         , shiptoaddressid
         , shipmethodid
-        , creditcardid
+        , coalesce(creditcardid, -1) as creditcardid
         , currencyrateid
         , creditcardapprovalcode
         , revisionnumber
-        , date(orderdate)
-        , date(duedate)
-        , date(shipdate)
+        , date(orderdate) as orderdate
+        , date(duedate) as duedate
+        , date(shipdate) as shipdate
         , status
         , onlineorderflag
         , purchaseordernumber
