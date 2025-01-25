@@ -42,7 +42,7 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_rasoesvenda')
+              to: ref('dim_razoesvendas')
               field: sk_razoesvenda
       - name: orderdate
         description: "Data em que o pedido foi realizado."
