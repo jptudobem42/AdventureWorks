@@ -9,19 +9,18 @@ source as (
 , renamed as (
 
     select
-        businessentityid as id_businessentity
+        businessentityid
         , persontype
         , namestyle
         , title
         , firstname
         , middlename
         , lastname
+        , concat(firstname, ' ', lastname) as fullname
         , suffix
         , emailpromotion
         , additionalcontactinfo
         , demographics
-        , rowguid
-        , modifieddate as dt_modified
 
     from source
 

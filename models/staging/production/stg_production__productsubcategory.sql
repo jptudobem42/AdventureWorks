@@ -12,8 +12,6 @@ source as (
         productsubcategoryid
         , productcategoryid
         , name
-        , rowguid
-        , modifieddate
 
     from source
 

@@ -9,20 +9,20 @@ source as (
 , renamed as (
 
     select
-        salesorderid as id_salesorder
-        , customerid as id_customer
-        , salespersonid as id_salesperson
-        , territoryid as id_territory
-        , billtoaddressid as id_billtoaddress
-        , shiptoaddressid as id_shiptoaddress
-        , shipmethodid as id_shipmethod
-        , creditcardid as id_creditcard
-        , currencyrateid as id_currencyrate
+        salesorderid
+        , customerid
+        , salespersonid
+        , territoryid
+        , billtoaddressid
+        , shiptoaddressid
+        , shipmethodid
+        , creditcardid
+        , currencyrateid
         , creditcardapprovalcode
         , revisionnumber
-        , date(orderdate) as dt_order
-        , date(duedate) as dt_due
-        , date(shipdate) as dt_ship
+        , date(orderdate)
+        , date(duedate)
+        , date(shipdate)
         , status
         , onlineorderflag
         , purchaseordernumber
@@ -32,8 +32,6 @@ source as (
         , freight
         , totaldue
         , comment
-        , rowguid
-        , modifieddate
 
     from source
 

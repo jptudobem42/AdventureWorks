@@ -9,12 +9,11 @@ source as (
 , renamed as (
 
     select
-        creditcardid as id_creditcard
+        creditcardid
         , cardtype
         , cardnumber
         , expmonth
         , expyear
-        , modifieddate as dt_modified
 
     from source
 

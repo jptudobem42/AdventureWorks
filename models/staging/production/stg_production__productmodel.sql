@@ -13,8 +13,6 @@ source as (
         , name
         , catalogdescription
         , instructions
-        , rowguid
-        , modifieddate
 
     from source
 

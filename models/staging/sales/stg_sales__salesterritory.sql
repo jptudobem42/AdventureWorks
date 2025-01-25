@@ -9,7 +9,7 @@ source as (
 , renamed as (
 
     select
-        territoryid as id_territory
+        territoryid
         , name
         , countryregioncode
         , "group" as grupo
@@ -17,8 +17,6 @@ source as (
         , saleslastyear
         , costytd
         , costlastyear
-        , rowguid
-        , modifieddate as dt_modified
 
     from source
 

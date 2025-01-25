@@ -19,7 +19,6 @@ source as (
         , reorderpoint
         , standardcost
         , listprice
-        , 'size'
         , sizeunitmeasurecode
         , weightunitmeasurecode
         , weight
@@ -32,8 +31,6 @@ source as (
         , sellstartdate
         , sellenddate
         , discontinueddate
-        , rowguid
-        , modifieddate
 
     from source
 
