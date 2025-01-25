@@ -58,7 +58,15 @@ sources:
             description: "Data em que o pedido foi realizado."
           - name: modifieddate
             description: "Data de última modificação do registro."
-
+      - name: salesorderheadersalesreason
+        description: "Tabela que relaciona pedidos de venda aos seus respectivos motivos."
+        columns:
+          - name: salesorderid
+            description: "Chave estrangeira associada ao cabeçalho do pedido."
+          - name: salesreasonid
+            description: "Chave estrangeira associada ao motivo da venda."
+          - name: modifieddate
+            description: "Data de última modificação do registro."
       - name: salesreason
         description: "Tabela com os motivos de venda associados aos pedidos."
         columns:

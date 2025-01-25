@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+  - name: AdventureWorks
+    type: analysis
+    owner:
+      name: João Paulo Carneiro
+      email: joao.carneiro@unimedbh.com.br
+    description: >
+      Este projeto foi criado para organizar e modelar os dados do banco de dados AdventureWorks
+      em um Data Warehouse, visando análises de vendas, clientes, produtos e territórios.
+      O dbt é utilizado para transformar os dados, garantindo qualidade e consistência
+      para dashboards no Power BI.
+    url: "https://power-bi-dashboard"
+    depends_on:
+      - ref('fat_vendas')
+      - ref('dim_clientes')
+      - ref('dim_produtos')
+      - ref('dim_endereco')
+      - ref('dim_razoesvendas')s')
