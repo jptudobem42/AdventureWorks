@@ -3,9 +3,50 @@ version: 2
 sources:
   - name: production
     database: FEA24_11
-    schema: raw_adventure_works
+    schema: RAW_ADVENTURE_WORKS
     tables:
       - name: product
+        description: "Tabela com informações detalhadas sobre os produtos disponíveis."
+        columns:
+          - name: productid
+            description: "Identificador único do produto."
+          - name: productname
+            description: "Nome do produto."
+          - name: standardcost
+            description: "Custo padrão do produto."
+          - name: listprice
+            description: "Preço de venda sugerido do produto."
+          - name: modifieddate
+            description: "Data de última modificação do registro."
+
       - name: productcategory
+        description: "Tabela com informações sobre categorias de produtos."
+        columns:
+          - name: productcategoryid
+            description: "Identificador único da categoria do produto."
+          - name: productcategoryname
+            description: "Nome da categoria do produto."
+          - name: modifieddate
+            description: "Data de última modificação do registro."
+
       - name: productmodel
+        description: "Tabela com informações sobre os modelos dos produtos."
+        columns:
+          - name: productmodelid
+            description: "Identificador único do modelo do produto."
+          - name: productmodelname
+            description: "Nome do modelo do produto."
+          - name: modifieddate
+            description: "Data de última modificação do registro."
+
       - name: productsubcategory
+        description: "Tabela com informações sobre subcategorias de produtos."
+        columns:
+          - name: productsubcategoryid
+            description: "Identificador único da subcategoria do produto."
+          - name: productsubcategoryname
+            description: "Nome da subcategoria do produto."
+          - name: productcategoryid
+            description: "Identificador da categoria relacionada."
+          - name: modifieddate
+            description: "Data de última modificação do registro."

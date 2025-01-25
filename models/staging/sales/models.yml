@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: stg_sales__creditcard
+    description: "Tabela staging com informações sobre cartões de crédito usados nas vendas."
+    columns:
+      - name: creditcardid
+        description: "Chave primária para identificar o cartão de crédito."
+        tests:
+          - not_null
+          - unique
+      - name: cardtype
+        description: "Tipo do cartão de crédito (Visa, MasterCard, etc.)."
+      - name: expmonth
+        description: "Mês de validade do cartão."
+      - name: expyear
+        description: "Ano de validade do cartão."
+
+  - name: stg_sales__customer
+    description: "Tabela staging com informações de clientes associados às vendas."
+    columns:
+      - name: customerid
+        description: "Chave primária para identificar o cliente."
+        tests:
+          - not_null
+          - unique
+      - name: accountnumber
+        description: "Número da conta do cliente."
+      - name: territoryid
+        description: "Chave estrangeira para associar o cliente a um território de vendas."
+
+  - name: stg_sales__salesorderdetail
+    description: "Tabela staging com os detalhes dos pedidos de venda realizados."
+    columns:
+      - name: salesorderid
+        description: "Chave estrangeira associada ao cabeçalho do pedido."
+      - name: productid
+        description: "Chave estrangeira associada ao produto no pedido."
+      - name: orderqty
+        description: "Quantidade do produto no pedido."
+      - name: unitprice
+        description: "Preço unitário do produto."
+
+  - name: stg_sales__salesorderheader
+    description: "Tabela staging com os cabeçalhos dos pedidos de venda."
+    columns:
+      - name: salesorderid
+        description: "Chave primária do cabeçalho do pedido."
+        tests:
+          - not_null
+          - unique
+      - name: totaldue
+        description: "Valor total devido no pedido."
+      - name: orderdate
+        description: "Data em que o pedido foi realizado."
+
+  - name: stg_sales__salesorderheadersalesreason
+    description: "Tabela staging com os motivos associados aos pedidos de venda."
+    columns:
+      - name: salesorderid
+        description: "Chave estrangeira associada ao pedido de venda."
+      - name: salesreasonid
+        description: "Chave estrangeira associada ao motivo da venda."
+
+  - name: stg_sales__salesperson
+    description: "Tabela staging com informações sobre os vendedores."
+    columns:
+      - name: businessentityid
+        description: "Chave primária para identificar o vendedor."
+        tests:
+          - not_null
+          - unique
+      - name: territoryid
+        description: "Chave estrangeira para associar o vendedor ao território de vendas."
+      - name: salesytd
+        description: "Total de vendas do vendedor no ano atual."
+
+  - name: stg_sales__store
+    description: "Tabela staging com informações das lojas associadas às vendas."
+    columns:
+      - name: businessentityid
+        description: "Chave primária para identificar a loja."
+      - name: name
+        description: "Nome da loja."
+      - name: salespersonid
+        description: "Chave estrangeira associada ao vendedor responsável pela loja."
