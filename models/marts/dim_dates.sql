@@ -1,7 +1,7 @@
 with
 dim_dates as (
 
-    select * from {{ ref('int_dates__translated') }}
+    select * from {{ ref('int_dates_translated') }}
 
 )
 

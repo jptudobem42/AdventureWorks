@@ -1,0 +1,120 @@
+version: 2
+
+models:
+  - name: fat_vendas
+    description: "Tabela fato que consolida as informações de vendas, incluindo detalhes do pedido, cliente, produto, endereço e cartão de crédito."
+    columns:
+      - name: sk_vendas
+        description: "Chave substituta para identificar unicamente as vendas."
+        tests:
+          - not_null
+          - unique
+      - name: sk_cartaocredito
+        description: "Chave estrangeira para a dimensão de cartões de crédito."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cartaocredito')
+              field: sk_cartaocredito
+      - name: sk_cliente
+        description: "Chave estrangeira para a dimensão de clientes."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clientes')
+              field: sk_cliente
+      - name: sk_endereco
+        description: "Chave estrangeira para a dimensão de endereços."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_endereco')
+              field: sk_endereco
+      - name: sk_produto
+        description: "Chave estrangeira para a dimensão de produtos."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produtos')
+              field: sk_produto
+      - name: orderdate
+        description: "Data em que o pedido foi realizado."
+        tests:
+          - not_null
+      - name: salesorderid
+        description: "Identificador do pedido de venda."
+        tests:
+          - not_null
+      - name: salesorderdetailid
+        description: "Identificador do detalhe do pedido de venda."
+        tests:
+          - not_null
+      - name: unitprice
+        description: "Preço unitário do produto no pedido."
+        tests:
+          - not_null
+      - name: orderqty
+        description: "Quantidade de produtos no pedido."
+        tests:
+          - not_null
+      - name: revenue
+        description: "Receita total calculada como (unitprice * orderqty)."
+        tests:
+          - not_null
+    tests:
+      - validate_revenue_2011
+
+  - name: dim_cartaocredito
+    description: "Dimensão contendo informações sobre os cartões de crédito."
+    columns:
+      - name: sk_cartaocredito
+        description: "Chave substituta para cartões de crédito."
+        tests:
+          - not_null
+          - unique
+      - name: creditcardid
+        description: "Identificador natural do cartão de crédito."
+        tests:
+          - not_null
+          - unique
+      - name: cardtype
+        description: "Nome do cartão de crédito"
+
+  - name: dim_clientes
+    description: "Dimensão contendo informações sobre os clientes."
+    columns:
+      - name: sk_cliente
+        description: "Chave substituta para clientes."
+        tests:
+          - not_null
+          - unique
+      - name: customerid
+        description: "Identificador natural do cliente."
+        tests:
+          - not_null
+
+  - name: dim_endereco
+    description: "Dimensão contendo informações sobre os endereços de envio."
+    columns:
+      - name: sk_endereco
+        description: "Chave substituta para endereços."
+        tests:
+          - not_null
+          - unique
+      - name: addressid
+        description: "Identificador natural do endereço."
+        tests:
+          - not_null
+
+  - name: dim_produtos
+    description: "Dimensão contendo informações sobre os produtos vendidos."
+    columns:
+      - name: sk_produto
+        description: "Chave substituta para produtos."
+        tests:
+          - not_null
+          - unique
+      - name: productid
+        description: "Identificador natural do produto."
+        tests:
+          - not_null

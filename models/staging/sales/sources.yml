@@ -6,17 +6,10 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: creditcard
-      - name: currency
-      - name: currencyrate
       - name: customer
-      - name: personcreditcard
       - name: salesorderdetail
       - name: salesorderheader
       - name: salesorderheadersalesreason
-      - name: salesperson
-      - name: salespersonquotahistory
       - name: salesreason
-      - name: salestaxrate
-      - name: salesterritory
-      - name: salesterritoryhistory
+      - name: salesperson
       - name: store

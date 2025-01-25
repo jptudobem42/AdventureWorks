@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: production
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: product
+      - name: productcategory
+      - name: productmodel
+      - name: productsubcategory

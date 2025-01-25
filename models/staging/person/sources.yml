@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: person
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: address
+      - name: countryregion
+      - name: person
+      - name: stateprovince

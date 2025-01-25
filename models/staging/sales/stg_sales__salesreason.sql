@@ -9,10 +9,9 @@ source as (
 , renamed as (
 
     select
-        salesreasonid as id_salesreason
+        salesreasonid
         , name
         , reasontype
-        , modifieddate as dt_modified
 
     from source
 

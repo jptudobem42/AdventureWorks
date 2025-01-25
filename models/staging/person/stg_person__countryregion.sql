@@ -11,7 +11,6 @@ source as (
     select
         countryregioncode
         , name
-        , modifieddate as dt_modified
 
     from source
 
