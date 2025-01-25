@@ -8,6 +8,7 @@ stg_salesorderdetail as (
         , orderqty
         , unitprice
         , unitprice * orderqty as revenue
+        , unitprice * orderqty - (unitprice * orderqty * unitpricediscount) as revenue_discounted
     from {{ ref('stg_sales__salesorderdetail') }}
 )
 
@@ -71,6 +72,7 @@ stg_salesorderdetail as (
         , stg_salesorderdetail.unitprice
         , stg_salesorderdetail.orderqty
         , stg_salesorderdetail.revenue
+        , stg_salesorderdetail.revenue_discounted
     from stg_salesorderdetail
     inner join stg_salesorderheader 
         on stg_salesorderheader.salesorderid = stg_salesorderdetail.salesorderid

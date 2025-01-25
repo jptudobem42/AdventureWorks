@@ -13,8 +13,6 @@ source as (
         , personid
         , storeid
         , territoryid
-        , rowguid
-        , modifieddate
 
     from source
 
