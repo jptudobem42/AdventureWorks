@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: person
-    database: fea24_11
+    database: FEA24_11
     schema: raw_adventure_works
     tables:
       - name: address

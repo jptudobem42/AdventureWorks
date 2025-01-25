@@ -37,6 +37,13 @@ models:
           - relationships:
               to: ref('dim_produtos')
               field: sk_produto
+      - name: sk_razoesvenda
+        description: "Chave estrangeira para a dimensão de razões de vendas."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_rasoesvenda')
+              field: sk_razoesvenda
       - name: orderdate
         description: "Data em que o pedido foi realizado."
         tests:
@@ -116,5 +123,18 @@ models:
           - unique
       - name: productid
         description: "Identificador natural do produto."
+        tests:
+          - not_null
+  
+  - name: dim_razoesvendas
+    description: "Dimensão de razões de vendas que armazena indicadores binários relacionados aos motivos de compra."
+    columns:
+      - name: sk_razoesvenda
+        description: "Chave substituta que identifica unicamente as razões de venda."
+        tests:
+          - not_null
+          - unique
+      - name: salesorderid
+        description: "Identificador do pedido relacionado às razões."
         tests:
           - not_null
