@@ -4,6 +4,11 @@
         'name'
     ) %}
 
+    case 
+        when array_size({{ array_column }}) = 0 then 1
+        else 0
+    end as "NO_REASON",
+    
     {% for reason in reasons %}
         case 
             when array_to_string({{ array_column }}, ',') like '%{{ reason }}%' then 1
