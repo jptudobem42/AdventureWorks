@@ -14,7 +14,10 @@ source as (
         , productnumber
         , makeflag
         , finishedgoodsflag
-        , color
+        , case
+            when color is null then 'N/A'
+            else color
+        end as color
         , safetystocklevel
         , reorderpoint
         , standardcost
@@ -24,10 +27,16 @@ source as (
         , weight
         , daystomanufacture
         , productline
-        , class
+        , case
+            when class is null then 'N/A'
+            else class
+        end as class
         , style
         , productsubcategoryid
-        , productmodelid
+        , case
+            when productmodelid is null then 0
+            else productmodelid
+        end as productmodelid
         , sellstartdate
         , sellenddate
         , discontinueddate

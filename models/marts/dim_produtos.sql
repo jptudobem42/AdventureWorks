@@ -34,7 +34,7 @@ produto as (
 
     select
         productmodelid
-        , name_modelo
+        , name
     from {{ ref('stg_production__productmodel') }}
 )
 
@@ -49,6 +49,7 @@ select
     , produto.class
     , produto_subcategoria.name as nome_subcategoria
     , produto_categoria.name as nome_categoria
+    , produto_modelo.name as nome_modelo
 from produto
 left join produto_subcategoria
     on produto.productsubcategoryid = produto_subcategoria.productsubcategoryid

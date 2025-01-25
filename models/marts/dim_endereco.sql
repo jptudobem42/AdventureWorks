@@ -3,14 +3,14 @@ with
 pais as (
     select
         countryregioncode
-        , name
+        , name as nome_pais
     from {{ ref('stg_person__countryregion')}}
 )
 
 , estado as (
     select
         stateprovinceid
-        , name
+        , name as nome_estado
         , countryregioncode
     from {{ ref('stg_person__stateprovince')}}
 )
@@ -19,7 +19,7 @@ pais as (
     select
         addressid
         , addressline1
-        , city
+        , city as nome_cidade
         , stateprovinceid
     from {{ ref('stg_person__address')}}
 )
@@ -28,9 +28,9 @@ select
     {{ dbt_utils.generate_surrogate_key(['endereco.addressid']) }} as sk_endereco
     , addressid
     , addressline1
-    , city
-    , statename
-    , countryname
+    , nome_cidade
+    , nome_estado
+    , nome_pais
 from endereco
 left join estado
     on estado.stateprovinceid = endereco.stateprovinceid
