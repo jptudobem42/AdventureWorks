@@ -52,6 +52,13 @@ stg_salesorderdetail as (
     from {{ref('dim_produtos')}}
 )
 
+, razoesvendas as (
+    select
+        salesorderid
+        , {{ generate_reason_indicators('reason_name') }}
+    from {{ ref('int_salesreasons_agg') }}
+)
+
 , fat_vendas as (
     select
         {{ dbt_utils.generate_surrogate_key(['stg_salesorderdetail.salesorderid', 'stg_salesorderdetail.salesorderdetailid']) }} as sk_vendas
@@ -67,6 +74,7 @@ stg_salesorderdetail as (
         , stg_salesorderdetail.orderqty
         , stg_salesorderdetail.revenue
         , stg_salesorderdetail.revenue_discounted
+        , razoesvendas.* exclude salesorderid
     from stg_salesorderdetail
     inner join stg_salesorderheader 
         on stg_salesorderheader.salesorderid = stg_salesorderdetail.salesorderid
@@ -78,6 +86,8 @@ stg_salesorderdetail as (
         on dim_endereco.addressid = stg_salesorderheader.shiptoaddressid
     left join dim_produtos
         on dim_produtos.productid = stg_salesorderdetail.productid
+    left join razoesvendas
+        on razoesvendas.salesorderid = stg_salesorderdetail.salesorderid
 )
 
 select 
