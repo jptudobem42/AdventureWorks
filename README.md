@@ -32,51 +32,61 @@ Com mais de **500 produtos**, **20.000 clientes** e **31.000 pedidos**, o objeti
 
 ---
 
-## **Principais Perguntas que o Projeto Responde**
+## **Modelo Conceitual do Data Warehouse**
 
-### **1. Desempenho Detalhado de Vendas**
-- Qual o número de pedidos, quantidade comprada e valor total negociado, detalhado por:
-  - Produto
-  - Tipo de cartão
-  - Motivo de venda
-  - Data de venda
-  - Cliente
-  - Status
-  - Cidade, estado e país?
+Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estrutura central do Data Warehouse desenvolvido para a Adventure Works. Ele segue o padrão estrela, com uma tabela fato central (**fato de vendas**) conectada a várias dimensões que permitem análises aprofundadas.
 
-### **2. Produtos com Maior Ticket Médio**
-- Quais produtos possuem o maior ticket médio por:
-  - Mês
-  - Ano
-  - Cidade, estado e país?  
-  *(Cálculo do ticket médio: Receita bruta - descontos do produto / número de pedidos no período de análise.)*
+```plaintext
+                +-------------------+  +-------------------+   
+                |   dim_produtos    |  |      dim_dates    |
+                +-------------------+  +-------------------+
+                            |               |
+                            |               |
+                            |               |
+                            ▼               ▼
++-------------------+     +---------------------+       +----------------+
+|   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |
++-------------------+     +---------------------+       +----------------+
+                            ▲                 ▲
+                            |                 |
+                            |                 |
+                +-------------------+   +-------------------+
+                |  dim_razoesvendas |   | dim_cartaocredito |
+                +-------------------+   +-------------------+
+```
+---
+### **Descrição das Entidades**
 
-### **3. Melhores Clientes**
-- Quem são os 10 melhores clientes por valor total negociado, com filtros por:
-  - Produto
-  - Tipo de cartão
-  - Motivo de venda
-  - Data de venda
-  - Status
-  - Cidade, estado e país?
+#### **Fato de Vendas (fat_vendas):**
+Contém informações transacionais sobre vendas, como:
+- Quantidade de itens comprados.
+- Receita bruta e líquida (após descontos).
+- Data da transação.
+- Referências às dimensões relacionadas.
 
-### **4. Cidades de Melhor Desempenho**
-- Quais são as 5 melhores cidades em valor total negociado, detalhado por:
-  - Produto
-  - Tipo de cartão
-  - Motivo de venda
-  - Data de venda
-  - Cliente
-  - Status
-  - Cidade, estado e país?
+#### **Dimensões:**
+- **Produtos:** Detalhes dos itens vendidos, como nome, categoria, subcategoria e preço.
+- **Clientes:** Informações dos clientes que realizaram as compras, como nome e localização.
+- **Endereço:** Localização dos clientes, incluindo cidade, estado e país.
+- **Razões de Vendas:** Motivos que influenciaram as vendas, como promoções ou preço.
+- **Cartão de Crédito:** Informações sobre o tipo e uso de cartões de crédito nas vendas.
 
-### **5. Análise Temporal de Vendas**
-- Qual o número de pedidos, quantidade comprada e valor total negociado por:
-  - Mês e ano  
-  *(Exibido como gráficos de séries temporais.)*
+---
 
-### **6. Análise de Motivos de Venda**
-- Qual produto tem a maior quantidade de unidades compradas para o motivo de venda "Promotion"?
+## **Estrutura do Projeto**
+
+O projeto foi estruturado em três camadas principais:
+
+1. **Camada de Staging:**  
+   Processa e organiza os dados brutos vindos das tabelas transacionais. Realiza renomeações, padronizações e pequenas transformações.
+
+2. **Camada Intermediária (Intermediate):**  
+   Realiza transformações mais complexas, como agregações e cruzamentos entre tabelas.  
+   Exemplo: `int_salesreason_agg`, que consolida os motivos de venda em formato binário.
+
+3. **Camada de Marts:**  
+   Modelo dimensional com tabelas fato e dimensões otimizadas para análises.  
+   Exemplo: `fat_vendas`, que consolida informações de pedidos, produtos, clientes e motivos de venda.
 
 ---
 
@@ -101,23 +111,6 @@ Com mais de **500 produtos**, **20.000 clientes** e **31.000 pedidos**, o objeti
    Dividir o projeto em entregas menores, com prazos e objetivos claros.  
 - **Testes de Qualidade:**  
    Implementar validações automáticas para garantir a consistência e a confiabilidade das informações.
-
----
-
-## **Estrutura do Projeto**
-
-O projeto foi estruturado em três camadas principais:
-
-1. **Camada de Staging:**  
-   Processa e organiza os dados brutos vindos das tabelas transacionais. Realiza renomeações, padronizações e pequenas transformações.
-
-2. **Camada Intermediária (Intermediate):**  
-   Realiza transformações mais complexas, como agregações e cruzamentos entre tabelas.  
-   Exemplo: `int_salesreason_agg`, que consolida os motivos de venda em formato binário.
-
-3. **Camada de Marts:**  
-   Modelo dimensional com tabelas fato e dimensões otimizadas para análises.  
-   Exemplo: `fat_vendas`, que consolida informações de pedidos, produtos, clientes e motivos de venda.
 
 ---
 

@@ -14,7 +14,8 @@ exposures:
     url: "https://power-bi-dashboard"
     depends_on:
       - ref('fat_vendas')
+      - ref('dim_cartaocredito')
       - ref('dim_clientes')
       - ref('dim_produtos')
       - ref('dim_endereco')
-      - ref('dim_razoesvendas')s')
+      - ref('dim_razoesvendas')
