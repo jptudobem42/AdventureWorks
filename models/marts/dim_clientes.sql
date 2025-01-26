@@ -6,7 +6,6 @@ stg_pessoa as (
         , fullname
         , persontype
     from {{ ref('stg_person__person') }}
-    where persontype = 'IN' 
 )
 
 ,stg_loja as (
@@ -33,11 +32,7 @@ stg_pessoa as (
 select
     {{ dbt_utils.generate_surrogate_key(['stg_cliente.customerid']) }} as sk_cliente
     , stg_cliente.customerid
-    , case
-        when stg_cliente.storeid is not null then 'Store'
-        when stg_cliente.personid is not null then 'Person'
-        else 'OTHER'
-    end as type
+    , stg_pessoa.persontype
     , stg_loja.storename
     , stg_pessoa.fullname
     , case

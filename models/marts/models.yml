@@ -92,20 +92,12 @@ models:
         description: "Identificador natural do cliente, conforme o sistema transacional."
         tests:
           - not_null
-      - name: type
-        description: "Tipo de cliente: 'Person' para clientes individuais, 'Store' para clientes corporativos, e 'OTHER' para casos não classificados."
-        tests:
-          - not_null
+      - name: persontype
+        description: "Tipo de cliente"
       - name: storename
         description: "Nome da loja, caso o cliente seja do tipo Store. Nulo para clientes individuais."
-        tests:
-          - not_null:
-              severity: warn
       - name: fullname
         description: "Nome completo do cliente, caso o cliente seja do tipo Person. Nulo para clientes do tipo Store."
-        tests:
-          - not_null:
-              severity: warn
       - name: is_order
         description: "Indicador booleano que informa se o cliente possui ou não pedidos associados."
         tests:
