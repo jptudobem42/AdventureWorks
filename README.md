@@ -82,12 +82,19 @@ Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estr
 +-------------------+     +---------------------+       +----------------+
 |   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |
 +-------------------+     +---------------------+       +----------------+
-                            ▲                 ▲
-                            |                 |
-                            |                 |
-                +-------------------+   +-------------------+
-                |  dim_razoesvendas |   | dim_cartaocredito |
-                +-------------------+   +-------------------+
+                                    ▲
+                                    |
+                                    |
+                        +---------------------+
+                        |   brg_razoesvenda   |
+                        +---------------------+
+                                    ▲
+                                    |
+                                    ▼
+                        +-------------------+
+                        |  dim_razoesvenda  |
+                        +-------------------+
+
 ```
 ---
 ### **Descrição das Entidades**
@@ -105,6 +112,10 @@ Contém informações transacionais sobre vendas, como:
 - **Endereço:** Localização dos clientes, incluindo cidade, estado e país.
 - **Razões de Vendas:** Motivos que influenciaram as vendas, como promoções ou preço.
 - **Cartão de Crédito:** Informações sobre o tipo e uso de cartões de crédito nas vendas.
+
+#### **Tabela Bridge - Razões de Venda (brg_razoesvenda):**
+
+- Conecta a tabela fato (fat_vendas) com os motivos de venda (dim_razoesvenda).
 
 ---
 

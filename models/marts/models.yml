@@ -37,13 +37,6 @@ models:
           - relationships:
               to: ref('dim_produtos')
               field: sk_produto
-      - name: sk_razoesvenda
-        description: "Chave estrangeira para a dimensão de razões de vendas."
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_razoesvendas')
-              field: sk_razoesvenda
       - name: orderdate
         description: "Data em que o pedido foi realizado."
         tests:
@@ -127,14 +120,45 @@ models:
           - not_null
   
   - name: dim_razoesvendas
-    description: "Dimensão de razões de vendas que armazena indicadores binários relacionados aos motivos de compra."
+    description: |
+      Dimensão que armazena os motivos de venda associados às transações. 
+      Contém informações sobre os motivos, como nome e tipo, e é referenciada pela tabela brg_razoesvendas.
     columns:
-      - name: sk_razoesvenda
-        description: "Chave substituta que identifica unicamente as razões de venda."
+      - name: sk_razao
+        description: "Chave substituta para identificar cada motivo de venda."
+        tests:
+          - unique
+          - not_null
+      - name: motivo
+        description: "Nome do motivo de venda, como 'Promotion' ou 'Price'."
         tests:
           - not_null
+      - name: tipo_razao
+        description: |
+          Categoria ou tipo do motivo de venda. Exemplo: 
+          - 'Marketing' para motivos relacionados a promoções;
+          - 'Desconto' para motivos relacionados a preços reduzidos.
+        tests:
+          - not_null
+
+  - name: brg_razoesvendas
+    description: |
+      Tabela bridge que gerencia a relação muitos-para-muitos entre as vendas e os motivos de venda.
+      Permite associar múltiplos motivos a uma única transação, mantendo o modelo dimensional escalável.
+    columns:
+      - name: sk_brg_razoesvenda
+        description: "Chave substituta única para a tabela bridge."
+        tests:
           - unique
+          - not_null
+      - name: sk_razao
+        description: "Chave substituta que conecta a tabela bridge à dimensão dim_razoesvendas."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_razoesvendas')
+              field: sk_razao
       - name: salesorderid
-        description: "Identificador do pedido relacionado às razões."
+        description: "Identificador único do pedido de venda associado aos motivos."
         tests:
           - not_null
