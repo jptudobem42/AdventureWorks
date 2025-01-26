@@ -7,6 +7,7 @@ stg_salesorderdetail as (
         , productid
         , orderqty
         , unitprice
+        , unitpricediscount
         , unitprice * orderqty as revenue
         , unitprice * orderqty - (unitprice * orderqty * unitpricediscount) as revenue_discounted
     from {{ ref('stg_sales__salesorderdetail') }}
@@ -51,13 +52,6 @@ stg_salesorderdetail as (
     from {{ref('dim_produtos')}}
 )
 
-, dim_razoesvendas as (
-    select 
-        sk_razoesvenda
-        , salesorderid
-    from {{ref('dim_razoesvendas')}}
-)
-
 , fat_vendas as (
     select
         {{ dbt_utils.generate_surrogate_key(['stg_salesorderdetail.salesorderid', 'stg_salesorderdetail.salesorderdetailid']) }} as sk_vendas
@@ -65,11 +59,11 @@ stg_salesorderdetail as (
         , dim_clientes.sk_cliente
         , dim_endereco.sk_endereco
         , dim_produtos.sk_produto
-        , dim_razoesvendas.sk_razoesvenda
         , stg_salesorderheader.orderdate
         , stg_salesorderdetail.salesorderid
         , stg_salesorderdetail.salesorderdetailid
         , stg_salesorderdetail.unitprice
+        , stg_salesorderdetail.unitpricediscount
         , stg_salesorderdetail.orderqty
         , stg_salesorderdetail.revenue
         , stg_salesorderdetail.revenue_discounted
@@ -84,8 +78,6 @@ stg_salesorderdetail as (
         on dim_endereco.addressid = stg_salesorderheader.shiptoaddressid
     left join dim_produtos
         on dim_produtos.productid = stg_salesorderdetail.productid
-    left join dim_razoesvendas
-        on dim_razoesvendas.salesorderid = stg_salesorderheader.salesorderid
 )
 
 select 

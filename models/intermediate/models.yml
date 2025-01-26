@@ -1,5 +1,0 @@
-version: 2
-
-models:
-  - name: int_salesreasons_agg
-    description: Tabela agregada com razões dinâmicas

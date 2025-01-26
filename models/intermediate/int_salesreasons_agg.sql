@@ -4,27 +4,30 @@ salesorderheader as (
     select distinct 
         salesorderid
     from {{ ref('stg_sales__salesorderheader') }}
-),
+)
 
-salesorderheadersalesreason as (
+, salesorderheadersalesreason as (
     select distinct 
-        salesorderid,
-        salesreasonid
+        salesorderid
+        , salesreasonid
     from {{ ref('stg_sales__salesorderheadersalesreason') }}
-),
+)
 
-salesreason as (
+, salesreason as (
     select 
-        salesreasonid,
-        name,
-        reasontype
+        salesreasonid
+        , name
+        , reasontype
     from {{ ref('stg_sales__salesreason') }}
-),
+)
 
-salesreasons_agg as (
+, salesreasons_agg as (
     select
         salesorderheader.salesorderid
-        , array_agg(salesreason.name) as reason_name
+        , case 
+            when array_size(array_agg(salesreason.name)) = 0 then array_construct('N/A')
+            else array_agg(salesreason.name)
+        end as reason_name
     from salesorderheader
     left join salesorderheadersalesreason
         on salesorderheader.salesorderid = salesorderheadersalesreason.salesorderid
@@ -34,6 +37,6 @@ salesreasons_agg as (
 )
 
 select
-    salesorderid,
-    reason_name
+    salesorderid
+    , reason_name
 from salesreasons_agg

@@ -18,4 +18,4 @@ exposures:
       - ref('dim_clientes')
       - ref('dim_produtos')
       - ref('dim_endereco')
-      - ref('dim_razoesvendas')
+      - ref('brg_razoesvenda')
