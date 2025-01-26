@@ -67,6 +67,21 @@ sources:
             description: "Chave estrangeira associada ao motivo da venda."
           - name: modifieddate
             description: "Data de última modificação do registro."
+      - name: salesperson
+        description: "Tabela com informações sobre vendedores."
+        columns:
+          - name: businessentityid
+            description: "Identificador único do vendedor."
+          - name: salesterritoryid
+            description: "Identificador do território do vendedor."
+          - name: salesquota
+            description: "Quota de vendas atribuída ao vendedor."
+          - name: bonus
+            description: "Bônus recebido pelo vendedor."
+          - name: commissionpct
+            description: "Percentual de comissão do vendedor."
+          - name: modifieddate
+            description: "Data de última modificação do registro."
       - name: salesreason
         description: "Tabela com os motivos de venda associados aos pedidos."
         columns:
