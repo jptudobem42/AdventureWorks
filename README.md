@@ -32,6 +32,41 @@ Com mais de **500 produtos**, **20.000 clientes** e **31.000 pedidos**, o objeti
 
 ---
 
+## **Riscos e Contingências**
+
+### **Riscos Identificados**
+1. **Resistência Interna:**  
+   Parte da equipe, especialmente da diretoria comercial, não enxerga o valor imediato do projeto e questiona o investimento.  
+2. **Dependência de Recursos:**  
+   Gabriel Santos, responsável pelo acesso aos dados, tem agenda limitada, o que pode causar atrasos.  
+3. **Qualidade dos Dados:**  
+   A inconsistência ou falta de integridade nos dados pode comprometer a confiança nos resultados.  
+4. **Orçamento e Prazos:**  
+   A pressão por resultados rápidos pode dificultar a execução planejada.
+
+### **Contingências**
+- **Engajamento Interno:**  
+   Realizar demonstrações de valor rápido com análises que beneficiem diretamente a área comercial.  
+- **Automação:**  
+   Minimizar dependências manuais com processos automatizados na ingestão e validação de dados.  
+- **Planejamento por Fases:**  
+   Dividir o projeto em entregas menores, com prazos e objetivos claros.  
+- **Testes de Qualidade:**  
+   Implementar validações automáticas para garantir a consistência e a confiabilidade das informações.
+
+---
+
+## **Impacto Esperado**
+- **Melhoria na Tomada de Decisão:**  
+   Identificar os produtos, clientes e regiões mais valiosos para o negócio.  
+- **Eficiência Operacional:**  
+   Reduzir o esforço manual de preparação de dados e aumentar a agilidade nas análises.  
+- **Base para Expansões Futuras:**  
+   Um modelo escalável e adaptável para integrar dados de outras áreas, como logística e produção.  
+- **Confiança nos Dados:**  
+   Geração de insights confiáveis, que suportem decisões estratégicas da diretoria.
+---
+
 ## **Modelo Conceitual do Data Warehouse**
 
 Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estrutura central do Data Warehouse desenvolvido para a Adventure Works. Ele segue o padrão estrela, com uma tabela fato central (**fato de vendas**) conectada a várias dimensões que permitem análises aprofundadas.
@@ -87,42 +122,6 @@ O projeto foi estruturado em três camadas principais:
 3. **Camada de Marts:**  
    Modelo dimensional com tabelas fato e dimensões otimizadas para análises.  
    Exemplo: `fat_vendas`, que consolida informações de pedidos, produtos, clientes e motivos de venda.
-
----
-
-## **Riscos e Contingências**
-
-### **Riscos Identificados**
-1. **Resistência Interna:**  
-   Parte da equipe, especialmente da diretoria comercial, não enxerga o valor imediato do projeto e questiona o investimento.  
-2. **Dependência de Recursos:**  
-   Gabriel Santos, responsável pelo acesso aos dados, tem agenda limitada, o que pode causar atrasos.  
-3. **Qualidade dos Dados:**  
-   A inconsistência ou falta de integridade nos dados pode comprometer a confiança nos resultados.  
-4. **Orçamento e Prazos:**  
-   A pressão por resultados rápidos pode dificultar a execução planejada.
-
-### **Contingências**
-- **Engajamento Interno:**  
-   Realizar demonstrações de valor rápido com análises que beneficiem diretamente a área comercial.  
-- **Automação:**  
-   Minimizar dependências manuais com processos automatizados na ingestão e validação de dados.  
-- **Planejamento por Fases:**  
-   Dividir o projeto em entregas menores, com prazos e objetivos claros.  
-- **Testes de Qualidade:**  
-   Implementar validações automáticas para garantir a consistência e a confiabilidade das informações.
-
----
-
-## **Impacto Esperado**
-- **Melhoria na Tomada de Decisão:**  
-   Identificar os produtos, clientes e regiões mais valiosos para o negócio.  
-- **Eficiência Operacional:**  
-   Reduzir o esforço manual de preparação de dados e aumentar a agilidade nas análises.  
-- **Base para Expansões Futuras:**  
-   Um modelo escalável e adaptável para integrar dados de outras áreas, como logística e produção.  
-- **Confiança nos Dados:**  
-   Geração de insights confiáveis, que suportem decisões estratégicas da diretoria.
 
 ---
 
