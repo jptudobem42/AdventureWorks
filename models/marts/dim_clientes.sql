@@ -1,12 +1,15 @@
 with
+
 stg_pessoa as (
     select
         businessentityid
         , fullname
+        , persontype
     from {{ ref('stg_person__person') }}
+    where persontype = 'IN' 
 )
 
-, stg_loja as (
+,stg_loja as (
     select
         businessentityid
         , name as storename
@@ -15,19 +18,38 @@ stg_pessoa as (
 
 , stg_cliente as (
     select
-        customerid
-        , personid
-        , storeid
+        customerid,
+        personid,
+        storeid
     from {{ ref('stg_sales__customer') }}
+)
+
+, stg_pedidos as (
+    select
+        distinct customerid
+    from {{ ref('stg_sales__salesorderheader') }}
 )
 
 select
     {{ dbt_utils.generate_surrogate_key(['stg_cliente.customerid']) }} as sk_cliente
     , stg_cliente.customerid
-    , stg_pessoa.fullname
+    , case
+        when stg_cliente.storeid is not null then 'Store'
+        when stg_cliente.personid is not null then 'Person'
+        else 'OTHER'
+    end as type
     , stg_loja.storename
+    , stg_pessoa.fullname
+    , case
+        when stg_pedidos.customerid is not null then true
+        else false
+    end as is_order
 from stg_cliente
 left join stg_pessoa
-    on stg_pessoa.businessentityid = stg_cliente.personid
+    on stg_cliente.personid = stg_pessoa.businessentityid 
 left join stg_loja
-    on stg_loja.businessentityid = stg_cliente.storeid
+    on stg_cliente.storeid = stg_loja.businessentityid 
+left join stg_pedidos
+    on stg_cliente.customerid = stg_pedidos.customerid
+where
+    stg_cliente.personid is not null or stg_cliente.storeid is not null

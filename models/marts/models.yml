@@ -79,17 +79,35 @@ models:
           - unique
       - name: cardtype
         description: "Nome do cartão de crédito"
-
+    
   - name: dim_clientes
-    description: "Dimensão contendo informações sobre os clientes."
+    description: "Dimensão contendo informações detalhadas sobre os clientes, incluindo lojas e pessoas físicas, e indicando se possuem pedidos associados."
     columns:
       - name: sk_cliente
-        description: "Chave substituta para clientes."
+        description: "Chave substituta única para identificar cada cliente."
         tests:
           - not_null
           - unique
       - name: customerid
-        description: "Identificador natural do cliente."
+        description: "Identificador natural do cliente, conforme o sistema transacional."
+        tests:
+          - not_null
+      - name: type
+        description: "Tipo de cliente: 'Person' para clientes individuais, 'Store' para clientes corporativos, e 'OTHER' para casos não classificados."
+        tests:
+          - not_null
+      - name: storename
+        description: "Nome da loja, caso o cliente seja do tipo Store. Nulo para clientes individuais."
+        tests:
+          - not_null:
+              severity: warn
+      - name: fullname
+        description: "Nome completo do cliente, caso o cliente seja do tipo Person. Nulo para clientes do tipo Store."
+        tests:
+          - not_null:
+              severity: warn
+      - name: is_order
+        description: "Indicador booleano que informa se o cliente possui ou não pedidos associados."
         tests:
           - not_null
 
