@@ -17,7 +17,8 @@ cartaocredito as (
 select
     {{ dbt_utils.generate_surrogate_key(['salesorderheader.creditcardid'])}} as sk_cartaocredito
     , salesorderheader.creditcardid
-    , cartaocredito.cardtype
+    , coalesce(cartaocredito.cardtype, 'No Card') as cardtype
 from salesorderheader
 left join cartaocredito
     on cartaocredito.creditcardid = salesorderheader.creditcardid
+where cartaocredito.cardtype is null
