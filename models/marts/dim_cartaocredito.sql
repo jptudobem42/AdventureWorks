@@ -21,4 +21,3 @@ select
 from salesorderheader
 left join cartaocredito
     on cartaocredito.creditcardid = salesorderheader.creditcardid
-where cartaocredito.cardtype is null
