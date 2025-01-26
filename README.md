@@ -98,8 +98,8 @@ Contém informações transacionais sobre vendas, como:
 - **Produtos:** Detalhes dos itens vendidos, como nome, categoria, subcategoria e preço.
 - **Clientes:** Informações dos clientes que realizaram as compras, como nome e localização.
 - **Endereço:** Localização dos clientes, incluindo cidade, estado e país.
-- **Razões de Vendas:** Motivos que influenciaram as vendas, como promoções ou preço.
 - **Cartão de Crédito:** Informações sobre o tipo e uso de cartões de crédito nas vendas.
+- **Datas:** Dimensão de tempo com informações granulares sobre datas.
 ---
 
 ## **Estrutura do Projeto**
