@@ -9,12 +9,10 @@ source as (
 , renamed as (
 
     select
-        customerid as id_customer
-        , personid as id_person
-        , storeid as id_store
-        , territoryid as id_territory
-        , rowguid
-        , modifieddate as dt_modified
+        customerid
+        , personid
+        , storeid
+        , territoryid
 
     from source
 

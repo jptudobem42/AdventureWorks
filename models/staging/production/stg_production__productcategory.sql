@@ -11,8 +11,6 @@ source as (
     select
         productcategoryid
         , name
-        , rowguid
-        , modifieddate
 
     from source
 

@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_production__product
+    description: "Tabela staging com informações de produtos disponíveis."
+    columns:
+      - name: productid
+        description: "Chave primária para identificar o produto."
+        tests:
+          - not_null
+          - unique
+      - name: productname
+        description: "Nome do produto."
+      - name: standardcost
+        description: "Custo padrão do produto."
+      - name: listprice
+        description: "Preço de venda sugerido para o produto."
+
+  - name: stg_production__productcategory
+    description: "Tabela staging com informações de categorias de produtos."
+    columns:
+      - name: productcategoryid
+        description: "Chave primária da categoria do produto."
+        tests:
+          - not_null
+          - unique
+      - name: productcategoryname
+        description: "Nome da categoria do produto."
+
+  - name: stg_production__productmodel
+    description: "Tabela staging com informações sobre os modelos dos produtos."
+    columns:
+      - name: productmodelid
+        description: "Chave primária para identificar o modelo do produto."
+        tests:
+          - not_null
+          - unique
+      - name: productmodelname
+        description: "Nome do modelo do produto."
+
+  - name: stg_production__productsubcategory
+    description: "Tabela staging com informações de subcategorias de produtos."
+    columns:
+      - name: productsubcategoryid
+        description: "Chave primária para identificar a subcategoria do produto."
+        tests:
+          - not_null
+          - unique
+      - name: productsubcategoryname
+        description: "Nome da subcategoria do produto."
+      - name: productcategoryid
+        description: "Chave estrangeira para associar à categoria do produto."

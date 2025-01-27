@@ -9,12 +9,11 @@ source as (
 , renamed as (
 
     select
-        creditcardid as id_creditcard
-        , cardtype
+        coalesce(creditcardid, -1) as creditcardid
+        , coalesce(cardtype, 'N/A') as cardtype
         , cardnumber
         , expmonth
         , expyear
-        , modifieddate as dt_modified
 
     from source
 

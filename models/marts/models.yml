@@ -1,0 +1,163 @@
+version: 2
+
+models:
+  - name: fat_vendas
+    description: "Tabela fato que consolida as informações de vendas, incluindo detalhes do pedido, cliente, produto, endereço e cartão de crédito."
+    columns:
+      - name: sk_vendas
+        description: "Chave substituta para identificar unicamente as vendas."
+        tests:
+          - not_null
+          - unique
+      - name: sk_cartaocredito
+        description: "Chave estrangeira para a dimensão de cartões de crédito."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cartaocredito')
+              field: sk_cartaocredito
+      - name: sk_cliente
+        description: "Chave estrangeira para a dimensão de clientes."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clientes')
+              field: sk_cliente
+      - name: sk_endereco
+        description: "Chave estrangeira para a dimensão de endereços."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_endereco')
+              field: sk_endereco
+      - name: sk_produto
+        description: "Chave estrangeira para a dimensão de produtos."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produtos')
+              field: sk_produto
+      - name: orderdate
+        description: "Data em que o pedido foi realizado."
+        tests:
+          - not_null
+      - name: salesorderid
+        description: "Identificador do pedido de venda."
+        tests:
+          - not_null
+      - name: salesorderdetailid
+        description: "Identificador do detalhe do pedido de venda."
+        tests:
+          - not_null
+      - name: unitprice
+        description: "Preço unitário do produto no pedido."
+        tests:
+          - not_null
+      - name: orderqty
+        description: "Quantidade de produtos no pedido."
+        tests:
+          - not_null
+      - name: revenue
+        description: "Receita total calculada como (unitprice * orderqty)."
+        tests:
+          - not_null
+    tests:
+      - validate_revenue_2011
+
+  - name: dim_cartaocredito
+    description: "Dimensão contendo informações sobre os cartões de crédito."
+    columns:
+      - name: sk_cartaocredito
+        description: "Chave substituta para cartões de crédito."
+        tests:
+          - not_null
+          - unique
+      - name: creditcardid
+        description: "Identificador natural do cartão de crédito."
+        tests:
+          - not_null
+          - unique
+      - name: cardtype
+        description: "Nome do cartão de crédito"
+    
+  - name: dim_clientes
+    description: "Dimensão contendo informações detalhadas sobre os clientes, incluindo lojas e pessoas físicas, e indicando se possuem pedidos associados."
+    columns:
+      - name: sk_cliente
+        description: "Chave substituta única para identificar cada cliente."
+        tests:
+          - not_null
+          - unique
+      - name: customerid
+        description: "Identificador natural do cliente, conforme o sistema transacional."
+        tests:
+          - not_null
+      - name: persontype
+        description: "Tipo de cliente"
+      - name: storename
+        description: "Nome da loja, caso o cliente seja do tipo Store. Nulo para clientes individuais."
+      - name: fullname
+        description: "Nome completo do cliente, caso o cliente seja do tipo Person. Nulo para clientes do tipo Store."
+
+  - name: dim_endereco
+    description: "Dimensão contendo informações sobre os endereços de envio."
+    columns:
+      - name: sk_endereco
+        description: "Chave substituta para endereços."
+        tests:
+          - not_null
+          - unique
+      - name: addressid
+        description: "Identificador natural do endereço."
+        tests:
+          - not_null
+
+  - name: dim_produtos
+    description: "Dimensão contendo informações sobre os produtos vendidos."
+    columns:
+      - name: sk_produto
+        description: "Chave substituta para produtos."
+        tests:
+          - not_null
+          - unique
+      - name: productid
+        description: "Identificador natural do produto."
+        tests:
+          - not_null
+
+  - name: dim_razoesvenda
+    description: |
+      Dimensão que armazena os motivos de venda relacionados às transações.
+      Esta dimensão permite analisar e filtrar vendas por motivos específicos, como promoções ou descontos.
+    columns:
+      - name: sk_razao
+        description: "Chave substituta única para identificar cada motivo de venda."
+        tests:
+          - unique
+          - not_null
+      - name: nomerazao
+        description: "Nome do motivo de venda (exemplo: 'Promotion', 'Price')."
+        tests:
+          - not_null
+
+  - name: brg_razoesvenda
+    description: |
+      Tabela bridge que mapeia múltiplos motivos a uma única transação. 
+      Permite relacionar vendas com várias razões, mantendo a granularidade correta do modelo.
+    columns:
+      - name: sk_brg_razoesvenda
+        description: "Chave substituta única para a tabela bridge."
+        tests:
+          - unique
+          - not_null
+      - name: salesorderid
+        description: "Chave de referência para identificar a transação de venda."
+        tests:
+          - not_null
+      - name: sk_razao
+        description: "Chave substituta que conecta a tabela bridge à dimensão dim_razoesvenda."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_razoesvenda')
+              field: sk_razao

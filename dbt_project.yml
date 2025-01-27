@@ -42,7 +42,7 @@ models:
       +materialized: view
     intermediate:
       +schema: "{{ 'DEV_JPCARNEIRO_INT' if target.name == 'dev' else 'PROD_JPCARNEIRO_INT' }}"
-      +materialized: view
+      +materialized: ephemeral
     marts:
       +schema: "{{ 'DEV_JPCARNEIRO_MARTS' if target.name == 'dev' else 'PROD_JPCARNEIRO_MARTS' }}"
       +materialized: "{{ 'view' if target.name == 'dev' else 'table' }}"  
