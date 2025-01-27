@@ -135,7 +135,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: motivo
+      - name: nomerazao
         description: "Nome do motivo de venda (exemplo: 'Promotion', 'Price')."
         tests:
           - not_null
