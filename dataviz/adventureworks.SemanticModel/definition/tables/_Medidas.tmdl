@@ -5,36 +5,43 @@ table _Medidas
 			SUM(FAT_VENDAS[REVENUE]) 
 			```
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: 01. Valores
 		lineageTag: b225a410-1c46-43db-81fa-c47abe74a399
 
 	measure '# Qtd. de pedidos' =
 			
 			DISTINCTCOUNT(FAT_VENDAS[SALESORDERID])
 		formatString: #,0
+		displayFolder: 02. Quantidades
 		lineageTag: 7a20076f-ccfd-4ced-943f-e0281084c67b
 
 	measure '# Qtd. de itens comprados' =
 			
 			SUM(FAT_VENDAS[ORDERQTY])
 		formatString: #,0
+		displayFolder: 02. Quantidades
 		lineageTag: af619031-7202-4258-b0b4-59ebb6b9d0c1
 
 	measure '$ Ticket médio' =
 			
 			DIVIDE(
-			    [$ Valor de vendas liquido]
+			    [$ Valor de vendas negociado]
 			    , [# Qtd. de pedidos]
+			    , 0
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: 01. Valores
 		lineageTag: 39f8b4b1-530b-46f6-8242-b811de990cf7
 
 	measure '$ Ticket médio por item' =
 			
 			DIVIDE(
-			    [$ Valor de vendas liquido]
+			    [$ Valor de vendas negociado]
 			    , [# Qtd. de itens comprados]
+			    , 0
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: 01. Valores
 		lineageTag: 54cb6839-d48f-47cc-8809-c47d9f7e7707
 
 	measure '# Ranking de vendas por clientes' = ```
@@ -45,7 +52,8 @@ table _Medidas
 			VAR vRank = 
 			    RANKX(
 			        ALL(DIM_CLIENTES)
-			        , [$ Valor de vendas liquido]
+			        , [$ Valor de vendas negociado]
+			        ,,, Dense
 			    ) 
 			
 			RETURN
@@ -62,16 +70,19 @@ table _Medidas
 			)
 			```
 		formatString: 0
+		displayFolder: 02. Quantidades
 		lineageTag: d19012d1-ac53-425e-8a7a-0d5f3e1d596a
 
-	measure '$ Valor de vendas liquido' = SUM(FAT_VENDAS[REVENUE_DISCOUNTED])
+	measure '$ Valor de vendas negociado' = SUM(FAT_VENDAS[REVENUE_DISCOUNTED])
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: 01. Valores
 		lineageTag: ff67d053-2d33-4a50-9f1f-e3af23afb9c6
 
 	measure '# Qtd. de pedidos - Promotion' =
 			
 			SUM(FAT_VENDAS[REASON_ON_PROMOTION])
 		formatString: 0
+		displayFolder: 02. Quantidades
 		lineageTag: afe4685a-9df3-4763-bf36-dbf0ad28809b
 
 	measure '# Ranking de vendas por cidade' = ```
@@ -79,7 +90,8 @@ table _Medidas
 			VAR vRank = 
 			    RANKX(
 			        ALL(DIM_ENDERECO[NOME_CIDADE])
-			        , [$ Valor de vendas liquido]
+			        , [$ Valor de vendas negociado]
+			        ,,, Dense
 			    ) 
 			
 			RETURN
@@ -91,7 +103,43 @@ table _Medidas
 			)
 			```
 		formatString: 0
+		displayFolder: 02. Quantidades
 		lineageTag: a358d0d9-096e-4bb2-9a96-5677f1be2ec1
+
+	measure 'Label Placeholder' = -1
+		formatString: 0
+		displayFolder: 00. Auxiliares
+		lineageTag: b3516604-a016-4f83-9350-fddfc5953f5e
+
+	measure 'Label produtos bart chart' = ```
+			
+			VAR _ItemName = 
+			SELECTEDVALUE(DIM_PRODUTOS[NOME_PRODTO])
+			
+			VAR _Valor = [$ Valor de vendas negociado]
+			
+			VAR _Formato = 
+			SWITCH(
+			    TRUE(),
+			    _Valor >= 1000000000, "$#,#0,,,.00B;-#,$#0,,,.00B",
+			    _Valor >= 1000000, "$#,#0,,.00M;-#,$#0,,.00M",
+			    _Valor >= 1000, "$#,#0,.00K;-#,$#0,.00K",
+			    "$#,0.00;-$#,0.00"
+			)
+			
+			VAR _Value = 
+			    _ItemName & " - " &  FORMAT(_Valor, _Formato)
+			
+			RETURN
+			_Value
+			```
+		displayFolder: 00. Auxiliares
+		lineageTag: 093589b2-2143-46bb-87c8-a24e614b0847
+
+	measure '$ Valor unitário do produto' = MAX(FAT_VENDAS[UNITPRICE])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: 01. Valores
+		lineageTag: 11089039-a45f-4489-937b-25010a0c074f
 
 	column Value
 		isHidden
