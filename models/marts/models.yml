@@ -98,10 +98,6 @@ models:
         description: "Nome da loja, caso o cliente seja do tipo Store. Nulo para clientes individuais."
       - name: fullname
         description: "Nome completo do cliente, caso o cliente seja do tipo Person. Nulo para clientes do tipo Store."
-      - name: is_order
-        description: "Indicador booleano que informa se o cliente possui ou não pedidos associados."
-        tests:
-          - not_null
 
   - name: dim_endereco
     description: "Dimensão contendo informações sobre os endereços de envio."
@@ -128,3 +124,40 @@ models:
         description: "Identificador natural do produto."
         tests:
           - not_null
+
+  - name: dim_razoesvenda
+    description: |
+      Dimensão que armazena os motivos de venda relacionados às transações.
+      Esta dimensão permite analisar e filtrar vendas por motivos específicos, como promoções ou descontos.
+    columns:
+      - name: sk_razao
+        description: "Chave substituta única para identificar cada motivo de venda."
+        tests:
+          - unique
+          - not_null
+      - name: motivo
+        description: "Nome do motivo de venda (exemplo: 'Promotion', 'Price')."
+        tests:
+          - not_null
+
+  - name: brg_razoesvenda
+    description: |
+      Tabela bridge que mapeia múltiplos motivos a uma única transação. 
+      Permite relacionar vendas com várias razões, mantendo a granularidade correta do modelo.
+    columns:
+      - name: sk_brg_razoesvenda
+        description: "Chave substituta única para a tabela bridge."
+        tests:
+          - unique
+          - not_null
+      - name: salesorderid
+        description: "Chave de referência para identificar a transação de venda."
+        tests:
+          - not_null
+      - name: sk_razao
+        description: "Chave substituta que conecta a tabela bridge à dimensão dim_razoesvenda."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_razoesvenda')
+              field: sk_razao

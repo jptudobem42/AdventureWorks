@@ -35,10 +35,6 @@ select
     , stg_pessoa.persontype
     , stg_loja.storename
     , stg_pessoa.fullname
-    , case
-        when stg_pedidos.customerid is not null then true
-        else false
-    end as is_order
 from stg_cliente
 left join stg_pessoa
     on stg_cliente.personid = stg_pessoa.businessentityid 
