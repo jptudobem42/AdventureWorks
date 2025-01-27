@@ -1,0 +1,90 @@
+table DIM_PRODUTOS
+	lineageTag: b5b83b2c-706b-471b-82ad-95e6f1460def
+
+	column SK_PRODUTO
+		dataType: string
+		lineageTag: 621cc4af-d9d4-4e02-b86d-0828646f1117
+		summarizeBy: none
+		sourceColumn: SK_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTID
+		dataType: double
+		lineageTag: 3062d2dd-1db8-41fc-9b56-ffaa02b72751
+		summarizeBy: none
+		sourceColumn: PRODUCTID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOME_PRODTO
+		dataType: string
+		lineageTag: d99c4582-166d-47c6-996b-66581d3bcb35
+		summarizeBy: none
+		sourceColumn: NOME_PRODTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTNUMBER
+		dataType: string
+		lineageTag: 6d09d2b2-549e-4e5f-95fe-a6717ed9eeb2
+		summarizeBy: none
+		sourceColumn: PRODUCTNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLOR
+		dataType: string
+		lineageTag: dff368ed-e382-465d-ae5b-9f64245e3013
+		summarizeBy: none
+		sourceColumn: COLOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS
+		dataType: string
+		lineageTag: 6f5dda35-1f1a-40b5-b036-34319c53c8f3
+		summarizeBy: none
+		sourceColumn: CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_SUBCATEGORIA
+		dataType: string
+		lineageTag: d8ae98e6-3df4-42f8-808f-c089e9bcb298
+		summarizeBy: none
+		sourceColumn: NOME_SUBCATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CATEGORIA
+		dataType: string
+		lineageTag: f017e052-226f-4bea-83f2-623d44909d4c
+		summarizeBy: none
+		sourceColumn: NOME_CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_MODELO
+		dataType: string
+		lineageTag: 751ce900-f78b-4f21-b164-98c01c9f7faa
+		summarizeBy: none
+		sourceColumn: NOME_MODELO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PRODUTOS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_PRODUTOS_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_PRODUTOS",Kind="Table"]}[Data]
+				in
+				    DIM_PRODUTOS_Table
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,67 @@
+table DIM_CLIENTES
+	lineageTag: 0ed1cb6e-2df8-423a-b854-073f079bf7b3
+
+	column SK_CLIENTE
+		dataType: string
+		lineageTag: 72358035-eff2-4423-af67-d521b2aeb565
+		summarizeBy: none
+		sourceColumn: SK_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMERID
+		dataType: double
+		lineageTag: 174e2f86-a717-4406-a896-8608b5a744e1
+		summarizeBy: none
+		sourceColumn: CUSTOMERID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FULLNAME
+		dataType: string
+		lineageTag: 256bb951-f373-4415-93dd-ba6cd23b3f49
+		summarizeBy: none
+		sourceColumn: FULLNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column STORENAME
+		dataType: string
+		lineageTag: 00a90bb5-d53d-4c35-9298-24b8be035a4a
+		summarizeBy: none
+		sourceColumn: STORENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_ORDER
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1f7361dd-6274-4798-901c-085ce815ca8d
+		summarizeBy: none
+		sourceColumn: IS_ORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERSONTYPE
+		dataType: string
+		lineageTag: b9f5b76c-05bc-44b1-aadc-c78420d8c6cd
+		summarizeBy: none
+		sourceColumn: PERSONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CLIENTES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_CLIENTES_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_CLIENTES",Kind="Table"]}[Data]
+				in
+				    DIM_CLIENTES_Table
+
+	annotation PBI_ResultType = Table
+

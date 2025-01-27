@@ -1,0 +1,24 @@
+relationship AutoDetected_b481377c-f6c4-4204-bcb5-58a58c69019e
+	fromColumn: FAT_VENDAS.SK_CARTAOCREDITO
+	toColumn: DIM_CARTAOCREDITO.SK_CARTAOCREDITO
+
+relationship AutoDetected_476d9a1d-5cb3-48d7-be3e-302e8241b487
+	fromColumn: FAT_VENDAS.SK_ENDERECO
+	toColumn: DIM_ENDERECO.SK_ENDERECO
+
+relationship AutoDetected_7f93c91e-9a18-496b-87e3-84b08a09214e
+	fromColumn: FAT_VENDAS.SK_PRODUTO
+	toColumn: DIM_PRODUTOS.SK_PRODUTO
+
+relationship 954e58f3-6857-15cd-5914-89c7fdbd5c07
+	fromColumn: FAT_VENDAS.ORDERDATE
+	toColumn: DIM_DATES.DATE_DAY
+
+relationship e3aa1a1e-8ec5-f675-5aca-32e600ea09d6
+	fromColumn: FAT_VENDAS.SK_CLIENTE
+	toColumn: DIM_CLIENTES.SK_CLIENTE
+
+relationship AutoDetected_6f230775-e935-4a35-af11-ee8fe03b822f
+	fromColumn: BRG_RAZOESVENDA.SK_RAZAO
+	toColumn: DIM_RAZOESVENDA.SK_RAZAO
+

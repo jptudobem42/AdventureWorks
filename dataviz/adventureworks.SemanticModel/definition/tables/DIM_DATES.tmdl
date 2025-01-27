@@ -1,0 +1,415 @@
+table DIM_DATES
+	lineageTag: 193644d9-c4c0-413c-b1cc-bc1d7754e455
+	dataCategory: Time
+
+	column DATE_DAY
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 44154f8e-eff2-4674-8fb9-b6cf0554e1b2
+		summarizeBy: none
+		sourceColumn: DATE_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_DATE_DAY
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8aeb7c3d-339e-4ec3-842a-a5f6e894c313
+		summarizeBy: none
+		sourceColumn: PRIOR_DATE_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NEXT_DATE_DAY
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 121b3f36-0dc5-497f-8ec2-376ba0a346eb
+		summarizeBy: none
+		sourceColumn: NEXT_DATE_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_DATE_DAY
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 6d4451c7-8efa-4a43-be88-00faacd49a0d
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_DATE_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_OVER_YEAR_DATE_DAY
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2087fc4e-7361-4063-b22a-7823db6c3a57
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_OVER_YEAR_DATE_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DAY_OF_WEEK
+		dataType: double
+		formatString: 0
+		lineageTag: c222cbd6-0a57-4b93-82e8-da6fa064bed2
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_WEEK_ISO
+		dataType: double
+		formatString: 0
+		lineageTag: 91072ab1-7a28-47e7-8b7c-3ac044825f3c
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_ISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_WEEK_NAME
+		dataType: string
+		lineageTag: 0bdbdf64-70e3-4f90-8341-21c61860236b
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_WEEK_NAME_SHORT
+		dataType: string
+		lineageTag: 3c44fd20-aabe-48d6-bae3-9342e89be284
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_NAME_SHORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_MONTH
+		dataType: double
+		formatString: 0
+		lineageTag: 018a4975-0d68-4c49-877b-472aa58397e4
+		summarizeBy: none
+		sourceColumn: DAY_OF_MONTH
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: 88bac37a-5104-477f-bd61-098bd0e76891
+		summarizeBy: none
+		sourceColumn: DAY_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 65495413-94cb-4f3c-8300-eb5de133dc35
+		summarizeBy: none
+		sourceColumn: WEEK_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WEEK_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 061e7be9-6135-4153-a908-3806a90aac8b
+		summarizeBy: none
+		sourceColumn: WEEK_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_WEEK_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: aef486d2-341a-4eb4-b26e-2c86ab040b18
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_WEEK_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_WEEK_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f269a280-6591-4381-b741-1a6a95838f0b
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_WEEK_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WEEK_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: b164eaab-2fba-4413-a919-cfcc70090e37
+		summarizeBy: none
+		sourceColumn: WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO_WEEK_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b847036d-21ca-4956-be53-c269fa847129
+		summarizeBy: none
+		sourceColumn: ISO_WEEK_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ISO_WEEK_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 25ca99ce-5f58-4c4f-939d-725c2294ff3a
+		summarizeBy: none
+		sourceColumn: ISO_WEEK_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_ISO_WEEK_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7b743b9c-a422-4023-be3a-5dbbeed092cf
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_ISO_WEEK_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_ISO_WEEK_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9afe83dd-0696-486a-b3da-c1f88fe9e263
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_ISO_WEEK_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ISO_WEEK_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: f3731f17-d820-4d51-a306-12cc4b5f8fba
+		summarizeBy: none
+		sourceColumn: ISO_WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIOR_YEAR_WEEK_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: be12480a-f8e0-4138-862d-c7ee776b345c
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIOR_YEAR_ISO_WEEK_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: b655f80f-7161-4f5e-a675-a9c389d6297a
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_ISO_WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: 542b0c2e-24c6-4617-b611-61b554dbc40c
+		summarizeBy: none
+		sourceColumn: MONTH_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: e4183b31-6216-4487-a693-d724a88664a0
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME_SHORT
+		dataType: string
+		lineageTag: 4927230a-e024-4003-8cb7-1e1de3ce465e
+		summarizeBy: none
+		sourceColumn: MONTH_NAME_SHORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c85412ed-957e-44ca-aef8-e49d1f2af4ea
+		summarizeBy: none
+		sourceColumn: MONTH_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MONTH_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: cc6f4aa1-de62-4c01-b392-11789e75610a
+		summarizeBy: none
+		sourceColumn: MONTH_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_MONTH_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9057a1d6-0586-4ff4-b749-4f86caaf466c
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_MONTH_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PRIOR_YEAR_MONTH_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7ee3eeb9-58c4-4681-be95-c4fad67422e3
+		summarizeBy: none
+		sourceColumn: PRIOR_YEAR_MONTH_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QUARTER_OF_YEAR
+		dataType: double
+		formatString: 0
+		lineageTag: ede2fc50-a7ae-4241-9cd6-eec20f57d28d
+		summarizeBy: none
+		sourceColumn: QUARTER_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUARTER_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: a82493a1-b0d6-4cce-aa60-c736cf7027cb
+		summarizeBy: none
+		sourceColumn: QUARTER_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QUARTER_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e5912a87-ded8-4785-8b48-e06b727478aa
+		summarizeBy: none
+		sourceColumn: QUARTER_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YEAR_NUMBER
+		dataType: double
+		formatString: 0
+		lineageTag: 79e25fbd-e66a-4d4f-b248-5bb0cc9b3b42
+		summarizeBy: none
+		sourceColumn: YEAR_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR_START_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 75bf128e-5ddc-49df-8e29-ee873d7dc78f
+		summarizeBy: none
+		sourceColumn: YEAR_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YEAR_END_DATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d3a8321e-6ba5-41d2-8d20-84d65f984db7
+		summarizeBy: none
+		sourceColumn: YEAR_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DAY_OF_WEEK_NAME_PTBR
+		dataType: string
+		lineageTag: db2f37a6-8b70-4d83-9503-66211c291c9a
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_NAME_PTBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_WEEK_NAME_SHC_PTBR
+		dataType: string
+		lineageTag: a2803a4e-8bcf-470e-b42c-19a3b95b5c23
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_NAME_SHC_PTBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME_PTBR
+		dataType: string
+		lineageTag: fb0481ee-d76a-4b7d-9d00-af538c617aed
+		summarizeBy: none
+		sourceColumn: MONTH_NAME_PTBR
+		sortByColumn: MONTH_OF_YEAR
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME_SHORT_PTBR
+		dataType: string
+		lineageTag: 85c1f31d-83d5-47ae-adde-fc50366a74d0
+		summarizeBy: none
+		sourceColumn: MONTH_NAME_SHORT_PTBR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_DATES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_DATES_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_DATES",Kind="Table"]}[Data]
+				in
+				    DIM_DATES_Table
+

@@ -1,0 +1,42 @@
+table BRG_RAZOESVENDA
+	lineageTag: 6b94b1b2-6dd1-4476-bd7c-2fe9a04d298e
+
+	column SK_BRG_RAZOESVENDA
+		dataType: string
+		lineageTag: df9af75e-11cf-401e-95f0-46be7e2efc57
+		summarizeBy: none
+		sourceColumn: SK_BRG_RAZOESVENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_RAZAO
+		dataType: string
+		lineageTag: 188fb74d-6486-4494-89a4-3b06b36fa4fe
+		summarizeBy: none
+		sourceColumn: SK_RAZAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALESORDERID
+		dataType: double
+		lineageTag: 0c458bb2-da2b-4050-b611-72790ec66712
+		summarizeBy: count
+		sourceColumn: SALESORDERID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition BRG_RAZOESVENDA = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE"),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    BRG_RAZOESVENDA_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="BRG_RAZOESVENDA",Kind="Table"]}[Data]
+				in
+				    BRG_RAZOESVENDA_Table
+
+	annotation PBI_ResultType = Table
+

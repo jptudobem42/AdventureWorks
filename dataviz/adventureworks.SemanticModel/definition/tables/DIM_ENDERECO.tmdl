@@ -1,0 +1,76 @@
+table DIM_ENDERECO
+	lineageTag: 4f8abbc1-59e4-435a-bb16-c1c4e1df7d06
+
+	column SK_ENDERECO
+		dataType: string
+		lineageTag: e012a8ef-52d7-402c-b4fd-415fb7c8b19b
+		summarizeBy: none
+		sourceColumn: SK_ENDERECO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDRESSID
+		dataType: double
+		lineageTag: f1c24dc8-1412-4e70-aea8-368195c606d8
+		summarizeBy: none
+		sourceColumn: ADDRESSID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ADDRESSLINE1
+		dataType: string
+		lineageTag: c1c79cc2-87fa-49eb-a674-667184c521aa
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: ADDRESSLINE1
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CIDADE
+		dataType: string
+		lineageTag: 86feb068-b73d-4be1-89ef-00c4f5ff01da
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: NOME_CIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_ESTADO
+		dataType: string
+		lineageTag: 13970e03-f809-4953-980a-232f1981e5a2
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: NOME_ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_PAIS
+		dataType: string
+		lineageTag: 4e28e0bc-30b9-41f3-9acb-8ccfa7a779ee
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: NOME_PAIS
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGIAO = DIM_ENDERECO[NOME_PAIS] & " - " & DIM_ENDERECO[NOME_ESTADO] & " - " & DIM_ENDERECO[NOME_CIDADE]
+		lineageTag: 11ff3821-924a-4e79-b1e9-cd7d4ae40958
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_ENDERECO = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_ENDERECO_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_ENDERECO",Kind="Table"]}[Data]
+				in
+				    DIM_ENDERECO_Table
+
+	annotation PBI_ResultType = Table
+

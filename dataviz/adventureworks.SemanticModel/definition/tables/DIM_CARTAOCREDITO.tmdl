@@ -1,0 +1,42 @@
+table DIM_CARTAOCREDITO
+	lineageTag: 206136e1-3353-4f81-ac75-add28d1d9907
+
+	column SK_CARTAOCREDITO
+		dataType: string
+		lineageTag: b74a8130-672a-465d-92d5-9a4272e0a4d5
+		summarizeBy: none
+		sourceColumn: SK_CARTAOCREDITO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITCARDID
+		dataType: double
+		lineageTag: 5c55793e-e1d1-45f0-9587-df5f9038232d
+		summarizeBy: none
+		sourceColumn: CREDITCARDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CARDTYPE
+		dataType: string
+		lineageTag: 00fac1f0-4ed9-4b82-a463-94228f1f9125
+		summarizeBy: none
+		sourceColumn: CARDTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CARTAOCREDITO = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_CARTAOCREDITO_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_CARTAOCREDITO",Kind="Table"]}[Data]
+				in
+				    DIM_CARTAOCREDITO_Table
+
+	annotation PBI_ResultType = Table
+

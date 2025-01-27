@@ -1,0 +1,111 @@
+table _Medidas
+	lineageTag: 566912d1-a51c-4581-8e9d-ce80eb81e8d6
+
+	measure '$ Valor de vendas bruto' = ```
+			SUM(FAT_VENDAS[REVENUE]) 
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: b225a410-1c46-43db-81fa-c47abe74a399
+
+	measure '# Qtd. de pedidos' =
+			
+			DISTINCTCOUNT(FAT_VENDAS[SALESORDERID])
+		formatString: #,0
+		lineageTag: 7a20076f-ccfd-4ced-943f-e0281084c67b
+
+	measure '# Qtd. de itens comprados' =
+			
+			SUM(FAT_VENDAS[ORDERQTY])
+		formatString: #,0
+		lineageTag: af619031-7202-4258-b0b4-59ebb6b9d0c1
+
+	measure '$ Ticket médio' =
+			
+			DIVIDE(
+			    [$ Valor de vendas liquido]
+			    , [# Qtd. de pedidos]
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 39f8b4b1-530b-46f6-8242-b811de990cf7
+
+	measure '$ Ticket médio por item' =
+			
+			DIVIDE(
+			    [$ Valor de vendas liquido]
+			    , [# Qtd. de itens comprados]
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 54cb6839-d48f-47cc-8809-c47d9f7e7707
+
+	measure '# Ranking de vendas por clientes' = ```
+			
+			VAR vOuro = UNICHAR(129351)
+			VAR vPrata = UNICHAR(129352)
+			VAR vBronze = UNICHAR(129353)
+			VAR vRank = 
+			    RANKX(
+			        ALL(DIM_CLIENTES)
+			        , [$ Valor de vendas liquido]
+			    ) 
+			
+			RETURN
+			
+			IF (
+			    HASONEVALUE(DIM_CLIENTES[FULLNAME]), 
+			    SWITCH(
+			        vRank,
+			        1, vOuro,
+			        2, vPrata,
+			        3, vBronze,
+			        vRank
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: d19012d1-ac53-425e-8a7a-0d5f3e1d596a
+
+	measure '$ Valor de vendas liquido' = SUM(FAT_VENDAS[REVENUE_DISCOUNTED])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: ff67d053-2d33-4a50-9f1f-e3af23afb9c6
+
+	measure '# Qtd. de pedidos - Promotion' =
+			
+			SUM(FAT_VENDAS[REASON_ON_PROMOTION])
+		formatString: 0
+		lineageTag: afe4685a-9df3-4763-bf36-dbf0ad28809b
+
+	measure '# Ranking de vendas por cidade' = ```
+			
+			VAR vRank = 
+			    RANKX(
+			        ALL(DIM_ENDERECO[NOME_CIDADE])
+			        , [$ Valor de vendas liquido]
+			    ) 
+			
+			RETURN
+			
+			IF(
+			    HASONEVALUE(DIM_ENDERECO[NOME_CIDADE])
+			    , vRank
+			    , BLANK()
+			)
+			```
+		formatString: 0
+		lineageTag: a358d0d9-096e-4bb2-9a96-5677f1be2ec1
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: fcdd3379-2b74-4311-988b-8c9ffd3308a7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Medidas = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = 8bc98d58a04746889b065a5274a82bc3
+
