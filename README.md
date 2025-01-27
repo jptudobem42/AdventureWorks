@@ -82,6 +82,13 @@ Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estr
 +-------------------+     +---------------------+       +----------------+
 |   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |
 +-------------------+     +---------------------+       +----------------+
+
++-------------------+     +--------------------+
+| dim_razoesvenda   |     | brg_razoesvenda    |
++-------------------+     +--------------------+
+            ▲                        ▲
+            |                        |
+            +------------------------+
 ```
 ---
 ### **Descrição das Entidades**
@@ -100,6 +107,19 @@ Contém informações transacionais sobre vendas, como:
 - **Endereço:** Localização dos clientes, incluindo cidade, estado e país.
 - **Cartão de Crédito:** Informações sobre o tipo e uso de cartões de crédito nas vendas.
 - **Datas:** Dimensão de tempo com informações granulares sobre datas.
+
+#### **Dimensão de Razões (dim_razoesvenda):**
+
+Armazena os motivos que influenciaram as vendas, como:
+
+- Promoções, descontos ou outros fatores relacionados.
+
+#### **Tabela Bridge (brg_razoesvenda):**
+
+Relaciona as transações da tabela fato com múltiplos motivos da dimensão de razões:
+
+- Resolve a relação muitos-para-muitos entre vendas e razões.
+- Mantém a granularidade correta da tabela fato.
 ---
 
 ## **Estrutura do Projeto**
