@@ -161,3 +161,7 @@ models:
           - relationships:
               to: ref('dim_razoesvenda')
               field: sk_razao
+      - name: peso
+        description: "Valor para ajustar os cálculos, considerando o número de motivos associados a cada pedido"
+        tests:
+          - not_null
