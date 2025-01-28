@@ -11,4 +11,5 @@ select
     sk_brg_razoesvenda
     , sk_razao
     , salesorderid
+    , 1.0 / count(*) over(partition by salesorderid) as peso
 from reasons
