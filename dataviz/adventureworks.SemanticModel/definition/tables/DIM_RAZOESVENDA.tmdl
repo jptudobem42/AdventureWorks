@@ -1,0 +1,32 @@
+table DIM_RAZOESVENDA
+	lineageTag: 269350f7-da34-46cf-92c5-0906d043dd61
+
+	column SK_RAZAO
+		dataType: string
+		lineageTag: 5b428869-f2bd-4787-a16d-604a3de4289a
+		summarizeBy: none
+		sourceColumn: SK_RAZAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMERAZAO
+		dataType: string
+		lineageTag: 1a70cef8-a94b-43aa-ae20-2bf10fbf55ae
+		summarizeBy: none
+		sourceColumn: NOMERAZAO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_RAZOESVENDA = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE"),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    DIM_RAZOESVENDA_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_RAZOESVENDA",Kind="Table"]}[Data]
+				in
+				    DIM_RAZOESVENDA_Table
+
+	annotation PBI_ResultType = Table
+

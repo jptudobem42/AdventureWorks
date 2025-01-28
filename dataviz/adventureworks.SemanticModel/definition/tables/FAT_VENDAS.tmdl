@@ -1,0 +1,247 @@
+table FAT_VENDAS
+	lineageTag: 9d57457e-21a5-4aa6-8434-90be4dbc310f
+
+	column SK_VENDAS
+		dataType: string
+		lineageTag: 6fe52d1d-ab4e-4aa2-bc6e-51b93d2cbe99
+		summarizeBy: none
+		sourceColumn: SK_VENDAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_CARTAOCREDITO
+		dataType: string
+		lineageTag: 21d06618-cea4-4e12-9dd8-45cd0d0d2117
+		summarizeBy: none
+		sourceColumn: SK_CARTAOCREDITO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_CLIENTE
+		dataType: string
+		lineageTag: 851f9802-da13-4bb1-9bdb-59f3e5dc1bc2
+		summarizeBy: none
+		sourceColumn: SK_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_ENDERECO
+		dataType: string
+		lineageTag: 4b726b1f-6c33-4bec-adce-d1249741c27b
+		summarizeBy: none
+		sourceColumn: SK_ENDERECO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_PRODUTO
+		dataType: string
+		lineageTag: 92ac4f83-d173-47fa-bc3f-82ba5de1a29e
+		summarizeBy: none
+		sourceColumn: SK_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDERDATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 94790fb9-4688-4eeb-9912-98a4e288bd02
+		summarizeBy: none
+		sourceColumn: ORDERDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SALESORDERID
+		dataType: double
+		lineageTag: fd6de4ae-cd3b-411c-aab0-a3fab76fc163
+		summarizeBy: count
+		sourceColumn: SALESORDERID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SALESORDERDETAILID
+		dataType: double
+		lineageTag: 8142f49c-b18b-4e81-a201-1c68538b0a18
+		summarizeBy: count
+		sourceColumn: SALESORDERDETAILID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNITPRICE
+		dataType: double
+		lineageTag: e5845cc1-94e1-4634-9e5b-a62cbf975888
+		summarizeBy: sum
+		sourceColumn: UNITPRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDERQTY
+		dataType: double
+		lineageTag: 2c6306be-d348-429b-8945-a0dc7369e8e7
+		summarizeBy: sum
+		sourceColumn: ORDERQTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVENUE
+		dataType: double
+		lineageTag: f40f0309-cf54-4f68-b056-4a85a76c5eea
+		summarizeBy: sum
+		sourceColumn: REVENUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVENUE_DISCOUNTED
+		dataType: double
+		lineageTag: c275a0c9-a5cf-4e45-bb44-c52436ce4d82
+		summarizeBy: sum
+		sourceColumn: REVENUE_DISCOUNTED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNITPRICEDISCOUNT
+		dataType: double
+		lineageTag: 1d07a2a3-aad7-4a32-af62-d42f5f6b2cd4
+		summarizeBy: sum
+		sourceColumn: UNITPRICEDISCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NO_REASON
+		dataType: double
+		lineageTag: b35ffb30-ef45-40a3-bc60-2130d1329bf9
+		summarizeBy: sum
+		sourceColumn: NO_REASON
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_PRICE
+		dataType: double
+		lineageTag: 32ad3db1-4a0d-44e4-8bd0-3059234ef13c
+		summarizeBy: sum
+		sourceColumn: REASON_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_ON_PROMOTION
+		dataType: double
+		lineageTag: 4ed1b330-5466-477d-b029-b1dea683a41b
+		summarizeBy: sum
+		sourceColumn: REASON_ON_PROMOTION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_MAGAZINE_ADVERTISEMENT
+		dataType: double
+		lineageTag: 7f2cd87b-ac13-405c-9ff3-7b41fa7cd401
+		summarizeBy: sum
+		sourceColumn: REASON_MAGAZINE_ADVERTISEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_TELEVISION_ADVERTISEMENT
+		dataType: double
+		lineageTag: 94a4c6a4-03ba-488f-9f90-2dec9b16f20a
+		summarizeBy: sum
+		sourceColumn: REASON_TELEVISION_ADVERTISEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_MANUFACTURER
+		dataType: double
+		lineageTag: b31ee80a-3c6a-46e6-87a8-409786a4a567
+		summarizeBy: sum
+		sourceColumn: REASON_MANUFACTURER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_REVIEW
+		dataType: double
+		lineageTag: ef52852a-cfa6-4822-9e97-7d61096eefa7
+		summarizeBy: sum
+		sourceColumn: REASON_REVIEW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_DEMO_EVENT
+		dataType: double
+		lineageTag: 2e86fcaf-13f9-4aa8-b171-62d6bf7a37e0
+		summarizeBy: sum
+		sourceColumn: REASON_DEMO_EVENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_QUALITY
+		dataType: double
+		lineageTag: c6c16504-edc6-4c6e-9f2d-1d34ed29b139
+		summarizeBy: sum
+		sourceColumn: REASON_QUALITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_OTHER
+		dataType: double
+		lineageTag: 1a18e297-9e39-4d3f-b7e7-5529a01ecdd3
+		summarizeBy: sum
+		sourceColumn: REASON_OTHER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REASON_SPONSORSHIP
+		dataType: double
+		lineageTag: 62b8a39a-95e2-453a-9ca6-19f8cece1734
+		summarizeBy: sum
+		sourceColumn: REASON_SPONSORSHIP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FAT_VENDAS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE",[Role="FEA_STUDENT"]),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    FAT_VENDAS_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="FAT_VENDAS",Kind="Table"]}[Data]
+				in
+				    FAT_VENDAS_Table
+
+	annotation PBI_ResultType = Table
+
