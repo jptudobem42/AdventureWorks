@@ -141,21 +141,18 @@ models:
           - not_null
 
   - name: agg_razoesvenda
-    description: |
-      Tabela agregada com valores por motivos de venda.
+    description: "Tabela agregada com valores por motivos de venda."
     columns:
-      - name: salesorderid
-        description: "Chave de referência para identificar a transação de venda."
-        tests:
-          - not_null
       - name: sk_razao
-        description: "Chave substituta que conecta a tabela bridge à dimensão dim_razoesvenda."
+        description: "Chave substituta que conecta a tabela agg à dimensão dim_razoesvenda."
         tests:
           - not_null
           - relationships:
               to: ref('dim_razoesvenda')
               field: sk_razao
-      - name: peso
-        description: "Valor para ajustar os cálculos, considerando o número de motivos associados a cada pedido"
-        tests:
-          - not_null
+      - name: qtd_pedidos
+        description: "Quantidade de pedidos."
+      - name: revenue
+        description: "Valor total de vendas."
+      - name: revenue_discounted
+        description: "Valor negociado de vendas."
