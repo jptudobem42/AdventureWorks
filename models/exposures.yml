@@ -11,7 +11,7 @@ exposures:
       em um Data Warehouse, visando análises de vendas, clientes, produtos e territórios.
       O dbt é utilizado para transformar os dados, garantindo qualidade e consistência
       para dashboards no Power BI.
-    url: "https://power-bi-dashboard"
+    url: "https://tinyurl.com/u3d42ccb"
     depends_on:
       - ref('fat_vendas')
       - ref('dim_cartaocredito')

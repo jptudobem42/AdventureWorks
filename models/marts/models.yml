@@ -140,16 +140,10 @@ models:
         tests:
           - not_null
 
-  - name: brg_razoesvenda
+  - name: agg_razoesvenda
     description: |
-      Tabela bridge que mapeia múltiplos motivos a uma única transação. 
-      Permite relacionar vendas com várias razões, mantendo a granularidade correta do modelo.
+      Tabela agregada com valores por motivos de venda.
     columns:
-      - name: sk_brg_razoesvenda
-        description: "Chave substituta única para a tabela bridge."
-        tests:
-          - unique
-          - not_null
       - name: salesorderid
         description: "Chave de referência para identificar a transação de venda."
         tests:
