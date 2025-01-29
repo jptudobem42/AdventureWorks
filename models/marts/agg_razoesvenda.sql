@@ -25,7 +25,7 @@ reasons as (
         , round(sum(reasons.peso * fat_vendas.revenue), 2) as revenue
         , round(sum(reasons.peso * fat_vendas.revenue_discounted), 2) as revenue_discounted
     from reasons
-    join fat_vendas
+    inner join fat_vendas
         on fat_vendas.salesorderid = reasons.salesorderid
     group by all
 )

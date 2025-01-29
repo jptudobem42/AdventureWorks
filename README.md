@@ -83,12 +83,9 @@ Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estr
 |   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |
 +-------------------+     +---------------------+       +----------------+
 
-+-------------------+     +--------------------+
-| dim_razoesvenda   |     | brg_razoesvenda    |
-+-------------------+     +--------------------+
-            ▲                        ▲
-            |                        |
-            +------------------------+
++-------------------+ 
+| agg_razoesvenda   | 
++-------------------+ 
 ```
 ---
 ### **Descrição das Entidades**
@@ -114,12 +111,11 @@ Armazena os motivos que influenciaram as vendas, como:
 
 - Promoções, descontos ou outros fatores relacionados.
 
-#### **Tabela Bridge (brg_razoesvenda):**
+#### **Tabela agregada (agg_razoesvenda):**
 
-Relaciona as transações da tabela fato com múltiplos motivos da dimensão de razões:
+Tabela que realiza a agregação dos motivos de venda no nível de cada ordem de pedido.
 
-- Resolve a relação muitos-para-muitos entre vendas e razões.
-- Mantém a granularidade correta da tabela fato.
+- A tabela fato possui granularidade no nível do item do pedido, enquanto os motivos de venda estão no nível da ordem de pedido. Além disso, cada venda pode ter múltiplos motivos associados.
 ---
 
 ## **Estrutura do Projeto**
