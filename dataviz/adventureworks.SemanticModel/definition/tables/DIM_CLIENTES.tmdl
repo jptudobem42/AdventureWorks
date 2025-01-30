@@ -35,15 +35,6 @@ table DIM_CLIENTES
 
 		annotation SummarizationSetBy = Automatic
 
-	column IS_ORDER
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 1f7361dd-6274-4798-901c-085ce815ca8d
-		summarizeBy: none
-		sourceColumn: IS_ORDER
-
-		annotation SummarizationSetBy = Automatic
-
 	column PERSONTYPE
 		dataType: string
 		lineageTag: b9f5b76c-05bc-44b1-aadc-c78420d8c6cd

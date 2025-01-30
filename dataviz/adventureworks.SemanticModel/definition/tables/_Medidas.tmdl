@@ -78,13 +78,6 @@ table _Medidas
 		displayFolder: 01. Valores
 		lineageTag: ff67d053-2d33-4a50-9f1f-e3af23afb9c6
 
-	measure '# Qtd. de pedidos - Promotion' =
-			
-			SUM(FAT_VENDAS[REASON_ON_PROMOTION])
-		formatString: 0
-		displayFolder: 02. Quantidades
-		lineageTag: afe4685a-9df3-4763-bf36-dbf0ad28809b
-
 	measure '# Ranking de vendas por cidade' = ```
 			
 			VAR vRank = 
@@ -111,10 +104,10 @@ table _Medidas
 		displayFolder: 00. Auxiliares
 		lineageTag: b3516604-a016-4f83-9350-fddfc5953f5e
 
-	measure 'Label produtos bart chart' = ```
+	measure 'Label cidades bart chart' = ```
 			
 			VAR _ItemName = 
-			SELECTEDVALUE(DIM_PRODUTOS[NOME_PRODTO])
+			SELECTEDVALUE(DIM_ENDERECO[REGIAO])
 			
 			VAR _Valor = [$ Valor de vendas negociado]
 			
@@ -140,6 +133,77 @@ table _Medidas
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: 01. Valores
 		lineageTag: 11089039-a45f-4489-937b-25010a0c074f
+
+	measure '$ Valor de vendas negociado por motivo' =
+			
+			SUM(AGG_RAZOESVENDA[REVENUE_DISCOUNTED])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: 01. Valores
+		lineageTag: 46e4fe7c-db42-4c88-8e5a-906918ac8a69
+
+	measure '# Qtd. de pedidos por motivo' =
+			
+			SUM(AGG_RAZOESVENDA[QTD_PEDIDOS])
+		displayFolder: 02. Quantidades
+		lineageTag: 10aaca8b-c0c3-4ac8-bbf7-2204a97a5af0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Data maior venda' =
+			
+			VAR _MaiorCusto = MAXX(DIM_DATES,[$ Valor de vendas negociado])
+			RETURN
+			CALCULATE(
+			    MIN(DIM_DATES[DATE_DAY]),
+			    FILTER(
+			        ALLSELECTED(DIM_DATES)
+			        , [$ Valor de vendas negociado] = _MaiorCusto
+			    )
+			)
+		formatString: General Date
+		displayFolder: 01. Valores
+		lineageTag: 7360fa91-438a-4b01-be4d-8455848ee1c6
+
+	measure 'Max vendas' = ```
+			
+			
+			VAR __maxNoNivelAtual =
+			    CALCULATE(
+			        MAXX(ALLSELECTED(FAT_VENDAS), SUM(FAT_VENDAS[REVENUE_DISCOUNTED])),
+			        REMOVEFILTERS(DIM_DATES)
+			    )
+			
+			RETURN
+			    IF(
+			        SUM(FAT_VENDAS[REVENUE_DISCOUNTED]) = __maxNoNivelAtual, 
+			        __maxNoNivelAtual, 
+			        BLANK()
+			    )
+			```
+		displayFolder: 01. Valores
+		lineageTag: 17fbe7a3-990f-47f1-a8e4-7a96bc9ac3e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Min vendas' = ```
+			
+			VAR __minNoNivelAtual =
+			    CALCULATE(
+			        MINX(ALLSELECTED(FAT_VENDAS), SUM(FAT_VENDAS[REVENUE_DISCOUNTED])),
+			        REMOVEFILTERS(DIM_DATES)
+			    )
+			
+			RETURN
+			    IF(
+			        SUM(FAT_VENDAS[REVENUE_DISCOUNTED]) = __minNoNivelAtual, 
+			        __minNoNivelAtual, 
+			        BLANK()
+			    )
+			```
+		displayFolder: 01. Valores
+		lineageTag: f56ea2c6-3845-4cc7-8af9-74e5b01fd4fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		isHidden

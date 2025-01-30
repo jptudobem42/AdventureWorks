@@ -18,7 +18,11 @@ relationship e3aa1a1e-8ec5-f675-5aca-32e600ea09d6
 	fromColumn: FAT_VENDAS.SK_CLIENTE
 	toColumn: DIM_CLIENTES.SK_CLIENTE
 
-relationship AutoDetected_6f230775-e935-4a35-af11-ee8fe03b822f
-	fromColumn: BRG_RAZOESVENDA.SK_RAZAO
+relationship AutoDetected_267492f3-bfb1-42fc-9fdf-3ae9b66aabcb
+	fromColumn: AGG_RAZOESVENDA.SK_RAZAO
 	toColumn: DIM_RAZOESVENDA.SK_RAZAO
+
+relationship e6701d0e-1652-b951-a29f-b4d9dfc7afea
+	fromColumn: AGG_RAZOESVENDA.ORDERDATE
+	toColumn: DIM_DATES.DATE_DAY
 

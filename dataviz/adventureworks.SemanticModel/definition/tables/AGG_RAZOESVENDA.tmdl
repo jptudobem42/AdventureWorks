@@ -1,0 +1,67 @@
+table AGG_RAZOESVENDA
+	lineageTag: 663bab91-8722-4a9e-afc2-d34a17effa28
+
+	column SK_RAZAO
+		dataType: string
+		lineageTag: fc8e8686-8e7e-4c33-9efa-79487e1a4e34
+		summarizeBy: none
+		sourceColumn: SK_RAZAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDERDATE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2c8348bc-6a64-4e6f-be88-4ca921886f44
+		summarizeBy: none
+		sourceColumn: ORDERDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QTD_PEDIDOS
+		dataType: double
+		lineageTag: b9a489ec-b60d-4dca-8154-824e7c376ea6
+		summarizeBy: sum
+		sourceColumn: QTD_PEDIDOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVENUE
+		dataType: double
+		lineageTag: 1bffd697-7ba0-40eb-837d-77788467f826
+		summarizeBy: sum
+		sourceColumn: REVENUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVENUE_DISCOUNTED
+		dataType: double
+		lineageTag: 9f2e666f-6164-4fe0-9a23-0a8af480b9f0
+		summarizeBy: sum
+		sourceColumn: REVENUE_DISCOUNTED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition AGG_RAZOESVENDA = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("HCB48722-INDICIUMACADEMY.snowflakecomputing.com","ACADEMY_WAREHOUSE"),
+				    FEA24_11_Database = Source{[Name="FEA24_11",Kind="Database"]}[Data],
+				    PROD_JPCARNEIRO_MARTS_Schema = FEA24_11_Database{[Name="PROD_JPCARNEIRO_MARTS",Kind="Schema"]}[Data],
+				    AGG_RAZOESVENDA_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="AGG_RAZOESVENDA",Kind="Table"]}[Data]
+				in
+				    AGG_RAZOESVENDA_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

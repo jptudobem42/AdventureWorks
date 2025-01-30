@@ -62,7 +62,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: c222cbd6-0a57-4b93-82e8-da6fa064bed2
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: DAY_OF_WEEK
 
 		annotation SummarizationSetBy = Automatic
@@ -71,7 +71,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: 91072ab1-7a28-47e7-8b7c-3ac044825f3c
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: DAY_OF_WEEK_ISO
 
 		annotation SummarizationSetBy = Automatic
@@ -96,10 +96,8 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: 018a4975-0d68-4c49-877b-472aa58397e4
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: DAY_OF_MONTH
-
-		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -107,7 +105,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: 88bac37a-5104-477f-bd61-098bd0e76891
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: DAY_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -160,7 +158,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: b164eaab-2fba-4413-a919-cfcc70090e37
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: WEEK_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -213,7 +211,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: f3731f17-d820-4d51-a306-12cc4b5f8fba
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: ISO_WEEK_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -222,7 +220,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: be12480a-f8e0-4138-862d-c7ee776b345c
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: PRIOR_YEAR_WEEK_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -231,7 +229,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: b655f80f-7161-4f5e-a675-a9c389d6297a
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: PRIOR_YEAR_ISO_WEEK_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -240,7 +238,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: 542b0c2e-24c6-4617-b611-61b554dbc40c
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: MONTH_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -309,7 +307,7 @@ table DIM_DATES
 		dataType: double
 		formatString: 0
 		lineageTag: ede2fc50-a7ae-4241-9cd6-eec20f57d28d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: QUARTER_OF_YEAR
 
 		annotation SummarizationSetBy = Automatic
@@ -343,7 +341,7 @@ table DIM_DATES
 		summarizeBy: none
 		sourceColumn: YEAR_NUMBER
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column YEAR_START_DATE
 		dataType: dateTime
@@ -399,6 +397,15 @@ table DIM_DATES
 		lineageTag: 85c1f31d-83d5-47ae-adde-fc50366a74d0
 		summarizeBy: none
 		sourceColumn: MONTH_NAME_SHORT_PTBR
+		sortByColumn: MONTH_OF_YEAR
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semestre = "Q" & DIM_DATES[QUARTER_OF_YEAR]
+		lineageTag: d9980e4c-a9ee-4717-b03a-4968edf55cdb
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -412,4 +419,6 @@ table DIM_DATES
 				    DIM_DATES_Table = PROD_JPCARNEIRO_MARTS_Schema{[Name="DIM_DATES",Kind="Table"]}[Data]
 				in
 				    DIM_DATES_Table
+
+	annotation PBI_ResultType = Table
 

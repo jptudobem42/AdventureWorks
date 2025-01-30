@@ -3869,135 +3869,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_cliente.is_order": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "DIM_CLIENTES",
-			          "ConceptualProperty": "IS_ORDER"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "is order": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "IS_ORDER": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "is instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "is direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "is edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "is command": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "is directive": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "is demand": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "is mandate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
 			    "dim_cliente.persontype": {
 			      "Definition": {
 			        "Binding": {
@@ -4224,6 +4095,16 @@ cultureInfo en-US
 			          "regiao": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Região": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4307,16 +4188,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "Produto": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4409,6 +4280,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Cor": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4539,6 +4420,16 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Subcategoria": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4562,6 +4453,16 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Categoria": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4584,6 +4485,16 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Modelo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4971,1337 +4882,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fat_venda.no_reason": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "NO_REASON"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "no reason": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "NO_REASON": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "reason": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "number reason": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "no motivation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "no intention": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "motivation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "intention": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "no aim": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "no motive": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "no cause": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "no goal": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "no purpose": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_price": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_PRICE"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason price": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_PRICE": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason value": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason fee": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason charge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason amount": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason bill": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason rate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason expense": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason cost": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason outlay": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_on_promotion": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_ON_PROMOTION"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason on promotion": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_ON_PROMOTION": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "reason": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "motivation on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "intention on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "aim on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "motive on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "cause on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "goal on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "purpose on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "object on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "end on promotion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "motivation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_magazine_advertisement": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_MAGAZINE_ADVERTISEMENT"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason magazine advertisement": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_MAGAZINE_ADVERTISEMENT": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "advertisement": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "magazine advertisement": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason magazine announcement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason magazine poster": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason magazine billboard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason magazine flier": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason magazine flyer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "magazine announcement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "magazine poster": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "magazine billboard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "magazine flier": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "magazine flyer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_television_advertisement": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_TELEVISION_ADVERTISEMENT"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason television advertisement": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_TELEVISION_ADVERTISEMENT": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "advertisement": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "television advertisement": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason television announcement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason television poster": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason television billboard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason television flier": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason television flyer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "television announcement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "television poster": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "television billboard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "television flier": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "television flyer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_manufacturer": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_MANUFACTURER"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason manufacturer": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_MANUFACTURER": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "manufacturer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason builder": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason producer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason constructer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason constructor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason creator": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason industrialist": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason maker": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "builder": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "producer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "constructer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_review": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_REVIEW"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason review": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_REVIEW": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "review": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason appraisal": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason evaluation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason examination": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason analysis": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason criticism": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "appraisal": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "evaluation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "examination": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_demo_event": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_DEMO_EVENT"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason demo event": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_DEMO_EVENT": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "event": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "demo event": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason demo occurrence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason demo affair": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "reason demo episode": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "demo occurrence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "demo affair": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "demo episode": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason demo occasion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "reason demo happening": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "reason demo incident": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "reason demo experience": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_quality": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_QUALITY"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason quality": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_QUALITY": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "quality": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason excellence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason superiority": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason eminence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "excellence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "superiority": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "eminence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "reason class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason value": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_other": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_OTHER"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason other": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_OTHER": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "fat_venda.reason_sponsorship": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "FAT_VENDAS",
-			          "ConceptualProperty": "REASON_SPONSORSHIP"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "reason sponsorship": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "REASON_SPONSORSHIP": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "sponsorship": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "reason protection": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "reason patronage": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "protection": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "patronage": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "reason backing": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason support": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason funding": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason aid": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "reason finance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "backing": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
 			    "v_Medidas_medida": {
 			      "Definition": {
 			        "Binding": {
@@ -6346,6 +4926,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -6422,16 +5012,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "use": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
 			          }
 			        }
 			      ]
@@ -6553,7 +5133,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Quantidade vendida": {
+			          "Quantidade de itens": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -6564,6 +5144,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "Quantidade total de produtos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Qtde. vendida": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -6798,28 +5388,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_Medidas_medida.qtd__de_pedidos__promotion": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "# Qtd. de pedidos - Promotion"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "# qtd. de pedidos - promotion": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "# qtd. de pedidos promotion": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
 			    "v_Medidas_medida.ranking_de_vendas_por_cidade": {
 			      "Definition": {
 			        "Binding": {
@@ -6831,93 +5399,6 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "# ranking de vendas por cidade": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "BRG_RAZOESVENDA"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "brg razoesvenda": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "BRG_RAZOESVENDA": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda.sk_brg_razoesvenda": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "BRG_RAZOESVENDA",
-			          "ConceptualProperty": "SK_BRG_RAZOESVENDA"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "sk brg razoesvenda": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "SK_BRG_RAZOESVENDA": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda.sk_razao": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "BRG_RAZOESVENDA",
-			          "ConceptualProperty": "SK_RAZAO"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "sk razao": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "SK_RAZAO": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda.salesorderid": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "BRG_RAZOESVENDA",
-			          "ConceptualProperty": "SALESORDERID"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "salesorderid": {
 			            "State": "Generated"
 			          }
 			        }
@@ -6980,6 +5461,16 @@ cultureInfo en-US
 			        {
 			          "nomerazao": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Motivo da venda": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7050,18 +5541,18 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Label produtos bart chart"
+			          "ConceptualProperty": "Label cidades bart chart"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "label produtos bart chart": {
+			          "label cidades bart chart": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "sticker produto bart chart": {
+			          "sticker cidade bart chart": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7071,7 +5562,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "tag produto bart chart": {
+			          "tag cidade bart chart": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7081,7 +5572,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "decal produto bart chart": {
+			          "decal cidade bart chart": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7091,7 +5582,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "label produto bart diagram": {
+			          "label cidade bart diagram": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7101,7 +5592,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "label produto bart plan": {
+			          "label cidade bart plan": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7111,7 +5602,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "label produto bart graph": {
+			          "label cidade bart graph": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7121,7 +5612,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "label produto bart table": {
+			          "label cidade bart table": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7131,7 +5622,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "label produto bart map": {
+			          "label cidade bart map": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7141,7 +5632,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "name tag produto bart chart": {
+			          "name tag cidade bart chart": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -7175,9 +5666,25 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.624
 			          }
+			        }
+			      ]
+			    },
+			    "v_Medidas_medida.valor_de_vendas_negociado_por_motivo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "$ Valor de vendas negociado por motivo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "$ valor de vendas negociado por motivo": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "Valor unitário": {
+			          "Valor negociado": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -7187,9 +5694,491 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "v_Medidas_medida.qtd__de_pedidos_por_motivo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "# Qtd. de pedidos por motivo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "# qtd. de pedidos por motivo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "agg razoesvenda": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AGG_RAZOESVENDA": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda.sk_razao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA",
+			          "ConceptualProperty": "SK_RAZAO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "sk razao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SK_RAZAO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda.orderdate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA",
+			          "ConceptualProperty": "ORDERDATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "orderdate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "agg_razoesvenda.qtd_pedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA",
+			          "ConceptualProperty": "QTD_PEDIDOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd pedido": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "QTD_PEDIDOS": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda.revenue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA",
+			          "ConceptualProperty": "REVENUE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "revenue": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "income": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "profit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "turnover": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "yield": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda.revenue_discounted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGG_RAZOESVENDA",
+			          "ConceptualProperty": "REVENUE_DISCOUNTED"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "revenue discounted": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "REVENUE_DISCOUNTED": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "income discounted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "profit discounted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "turnover discounted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "yield discounted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.semestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATES",
+			          "ConceptualProperty": "Semestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "semestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v_Medidas_medida.data_maior_venda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Data maior venda"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data maior venda": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record maior venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "v_Medidas_medida.max_vendas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Max vendas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "max vendas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "maximum venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "v_Medidas_medida.min_vendas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Min vendas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "min vendas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "minimum venda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "agg_razoesvenda_has_dim_razoesvenda": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "dim_razoesvenda": {
+			          "Target": {
+			            "Entity": "dim_razoesvenda"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "dim_razoesvenda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have_dim_razoesvendas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "agg_razoesvenda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_razoesvendas_have_agg_razoesvendas"
+			        }
+			      ]
+			    },
+			    "fat_venda_has_dim_cliente": {
+			      "Binding": {
+			        "ConceptualEntity": "FAT_VENDAS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fat_venda": {
+			          "Target": {
+			            "Entity": "fat_venda"
+			          }
+			        },
+			        "dim_cliente": {
+			          "Target": {
+			            "Entity": "dim_cliente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fat_venda"
+			            },
+			            "Object": {
+			              "Role": "dim_cliente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fat_venda_have_dim_clientes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_cliente"
+			            },
+			            "Object": {
+			              "Role": "fat_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_clientes_have_fat_venda"
+			        }
+			      ]
+			    },
 			    "fat_venda_has_dim_date": {
 			      "Binding": {
 			        "ConceptualEntity": "FAT_VENDAS"
@@ -7374,6 +6363,336 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "v_Medidas_medida_has_min_vendas": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Medidas_medida": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida"
+			          }
+			        },
+			        "v_Medidas_medida.min_vendas": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida.min_vendas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Medidas_medida"
+			            },
+			            "Object": {
+			              "Role": "v_Medidas_medida.min_vendas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_min_vendas"
+			        }
+			      ]
+			    },
+			    "v_Medidas_medida_has_max_vendas": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Medidas_medida": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida"
+			          }
+			        },
+			        "v_Medidas_medida.max_vendas": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida.max_vendas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Medidas_medida"
+			            },
+			            "Object": {
+			              "Role": "v_Medidas_medida.max_vendas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_max_vendas"
+			        }
+			      ]
+			    },
+			    "dim_date_has_v_Medidas_medida_data_maior_venda": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATES"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "v_Medidas_medida.data_maior_venda": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida.data_maior_venda"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "v_Medidas_medida.data_maior_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_data_maior_venda"
+			        }
+			      ]
+			    },
+			    "dim_date_has_semestre": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATES"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.semestre": {
+			          "Target": {
+			            "Entity": "dim_date.semestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.semestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_semestres"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_revenue_discounted": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "agg_razoesvenda.revenue_discounted": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda.revenue_discounted"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "agg_razoesvenda.revenue_discounted"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have_revenue_discounted"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_revenue": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "agg_razoesvenda.revenue": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda.revenue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "agg_razoesvenda.revenue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have_revenues"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_qtd_pedido": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "agg_razoesvenda.qtd_pedido": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda.qtd_pedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "agg_razoesvenda.qtd_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have_qtd_pedidos"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_orderdate": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "agg_razoesvenda.orderdate": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda.orderdate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "agg_razoesvenda.orderdate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have_orderdates"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_v_Medidas_medida_qtd__de_pedidos_por_motivo": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "v_Medidas_medida.qtd__de_pedidos_por_motivo": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida.qtd__de_pedidos_por_motivo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "v_Medidas_medida.qtd__de_pedidos_por_motivo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have__qtd__de_pedidos_por_motivo"
+			        }
+			      ]
+			    },
+			    "agg_razoesvenda_has_v_Medidas_medida_valor_de_vendas_negociado_por_motivo": {
+			      "Binding": {
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agg_razoesvenda": {
+			          "Target": {
+			            "Entity": "agg_razoesvenda"
+			          }
+			        },
+			        "v_Medidas_medida.valor_de_vendas_negociado_por_motivo": {
+			          "Target": {
+			            "Entity": "v_Medidas_medida.valor_de_vendas_negociado_por_motivo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agg_razoesvenda"
+			            },
+			            "Object": {
+			              "Role": "v_Medidas_medida.valor_de_vendas_negociado_por_motivo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agg_razoesvendas_have__valor_de_vendas_negociado_por_motivo"
+			        }
+			      ]
+			    },
 			    "fat_venda_has_v_Medidas_medida_valor_unitário_do_produto": {
 			      "Binding": {
 			        "ConceptualEntity": "FAT_VENDAS"
@@ -7436,7 +6755,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing_medidas_have_label_produtos_bart_chart"
+			          "ID": "Phrasing_medidas_have_label_cidades_bart_chart"
 			        }
 			      ]
 			    },
@@ -7539,72 +6858,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "brg_razoesvenda_has_salesorderid": {
-			      "Binding": {
-			        "ConceptualEntity": "BRG_RAZOESVENDA"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "brg_razoesvenda": {
-			          "Target": {
-			            "Entity": "brg_razoesvenda"
-			          }
-			        },
-			        "brg_razoesvenda.salesorderid": {
-			          "Target": {
-			            "Entity": "brg_razoesvenda.salesorderid"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "brg_razoesvenda"
-			            },
-			            "Object": {
-			              "Role": "brg_razoesvenda.salesorderid"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "brg_razoesvendas_have_salesorderids"
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda_has_sk_brg_razoesvenda": {
-			      "Binding": {
-			        "ConceptualEntity": "BRG_RAZOESVENDA"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "brg_razoesvenda": {
-			          "Target": {
-			            "Entity": "brg_razoesvenda"
-			          }
-			        },
-			        "brg_razoesvenda.sk_brg_razoesvenda": {
-			          "Target": {
-			            "Entity": "brg_razoesvenda.sk_brg_razoesvenda"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "brg_razoesvenda"
-			            },
-			            "Object": {
-			              "Role": "brg_razoesvenda.sk_brg_razoesvenda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "brg_razoesvendas_have_sk_brg_razoesvendas"
-			        }
-			      ]
-			    },
 			    "v_Medidas_medida_has_ranking_de_vendas_por_cidade": {
 			      "Binding": {
 			        "ConceptualEntity": "_Medidas"
@@ -7635,39 +6888,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_medidas_have__ranking_de_vendas_por_cidade"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_v_Medidas_medida_qtd__de_pedidos__promotion": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "v_Medidas_medida.qtd__de_pedidos__promotion": {
-			          "Target": {
-			            "Entity": "v_Medidas_medida.qtd__de_pedidos__promotion"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "v_Medidas_medida.qtd__de_pedidos__promotion"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have__qtd__de_pedidos__promotion"
 			        }
 			      ]
 			    },
@@ -7899,396 +7119,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fat_venda_have__valor_de_vendas_bruto"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_sponsorship": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_sponsorship": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_sponsorship"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_sponsorship"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_sponsorships"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_other": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_other": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_other"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_other"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_others"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_quality": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_quality": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_quality"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_quality"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_qualities"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_demo_event": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_demo_event": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_demo_event"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_demo_event"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_demo_events"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_review": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_review": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_review"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_review"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_reviews"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_manufacturer": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_manufacturer": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_manufacturer"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_manufacturer"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_manufacturers"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_television_advertisement": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_television_advertisement": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_television_advertisement"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_television_advertisement"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_television_advertisements"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_magazine_advertisement": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_magazine_advertisement": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_magazine_advertisement"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_magazine_advertisement"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_magazine_advertisements"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_on_promotion": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_on_promotion": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_on_promotion"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_on_promotion"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_on_promotion"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_reason_price": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.reason_price": {
-			          "Target": {
-			            "Entity": "fat_venda.reason_price"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.reason_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_reason_prices"
-			        },
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Adjectives": [
-			              {
-			                "expensive": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Antonyms": [
-			              {
-			                "cheap": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "fat_venda.reason_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "reason_price_indicates_how_expensive_fat_venda_are"
-			        }
-			      ]
-			    },
-			    "fat_venda_has_no_reason": {
-			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fat_venda": {
-			          "Target": {
-			            "Entity": "fat_venda"
-			          }
-			        },
-			        "fat_venda.no_reason": {
-			          "Target": {
-			            "Entity": "fat_venda.no_reason"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fat_venda"
-			            },
-			            "Object": {
-			              "Role": "fat_venda.no_reason"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fat_venda_have_no_reasons"
 			        }
 			      ]
 			    },
@@ -9147,39 +7977,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_clientes_have_persontypes"
-			        }
-			      ]
-			    },
-			    "dim_cliente_has_is_order": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_CLIENTES"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_cliente": {
-			          "Target": {
-			            "Entity": "dim_cliente"
-			          }
-			        },
-			        "dim_cliente.is_order": {
-			          "Target": {
-			            "Entity": "dim_cliente.is_order"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_cliente"
-			            },
-			            "Object": {
-			              "Role": "dim_cliente.is_order"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_clientes_have_is_orders"
 			        }
 			      ]
 			    },
@@ -11599,20 +10396,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fat_venda_has_dim_cliente": {
+			    "agg_razoesvenda_has_dim_date": {
 			      "Binding": {
-			        "ConceptualEntity": "FAT_VENDAS"
+			        "ConceptualEntity": "AGG_RAZOESVENDA"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fat_venda": {
+			        "agg_razoesvenda": {
 			          "Target": {
-			            "Entity": "fat_venda"
+			            "Entity": "agg_razoesvenda"
 			          }
 			        },
-			        "dim_cliente": {
+			        "dim_date": {
 			          "Target": {
-			            "Entity": "dim_cliente"
+			            "Entity": "dim_date"
 			          }
 			        }
 			      },
@@ -11620,74 +10417,28 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fat_venda"
+			              "Role": "agg_razoesvenda"
 			            },
 			            "Object": {
-			              "Role": "dim_cliente"
+			              "Role": "dim_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fat_venda_have_dim_clientes"
+			          "ID": "agg_razoesvendas_have_dim_dates"
 			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_cliente"
+			              "Role": "dim_date"
 			            },
 			            "Object": {
-			              "Role": "fat_venda"
+			              "Role": "agg_razoesvenda"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_clientes_have_fat_venda"
-			        }
-			      ]
-			    },
-			    "brg_razoesvenda_has_dim_razoesvenda": {
-			      "Binding": {
-			        "ConceptualEntity": "BRG_RAZOESVENDA"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "brg_razoesvenda": {
-			          "Target": {
-			            "Entity": "brg_razoesvenda"
-			          }
-			        },
-			        "dim_razoesvenda": {
-			          "Target": {
-			            "Entity": "dim_razoesvenda"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "brg_razoesvenda"
-			            },
-			            "Object": {
-			              "Role": "dim_razoesvenda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "brg_razoesvendas_have_dim_razoesvendas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_razoesvenda"
-			            },
-			            "Object": {
-			              "Role": "brg_razoesvenda"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_razoesvendas_have_brg_razoesvendas"
+			          "ID": "dim_dates_have_agg_razoesvendas"
 			        }
 			      ]
 			    }
