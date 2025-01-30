@@ -5143,7 +5143,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Quantidade total de produtos": {
+			          "Qtde. vendida": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -5153,7 +5153,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Qtde. vendida": {
+			          "Quantidade total de produtos": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -5358,6 +5358,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "Valor negociado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Total": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
