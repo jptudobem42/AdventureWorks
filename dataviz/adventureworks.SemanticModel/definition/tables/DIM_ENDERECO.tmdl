@@ -55,7 +55,7 @@ table DIM_ENDERECO
 
 		annotation SummarizationSetBy = Automatic
 
-	column REGIAO = DIM_ENDERECO[NOME_PAIS] & " - " & DIM_ENDERECO[NOME_ESTADO] & " - " & DIM_ENDERECO[NOME_CIDADE]
+	column REGIAO = DIM_ENDERECO[NOME_CIDADE] & ", " & DIM_ENDERECO[NOME_ESTADO] & " - " & DIM_ENDERECO[NOME_PAIS]
 		lineageTag: 11ff3821-924a-4e79-b1e9-cd7d4ae40958
 		summarizeBy: none
 
