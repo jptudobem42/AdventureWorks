@@ -8,5 +8,5 @@ with razoesvendas as (
 
 select 
     sk_razao
-    , nomerazao
+    , replace(nomerazao, '"', '') as nomerazao
 from razoesvendas
