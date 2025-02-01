@@ -6504,7 +6504,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Coluna": {
+			          "Descrição": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -6514,7 +6514,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Descrição": {
+			          "Coluna": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -8687,6 +8687,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Expressão": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -8851,7 +8861,9 @@ cultureInfo en-US
 			      },
 			      "State": "Generated",
 			      "Terms": [
-			        {},
+			        {
+			          "": {}
+			        },
 			        {
 			          "location": {
 			            "Type": "Noun",
@@ -10198,7 +10210,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Tabela": {
+			          "Descrição": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -10208,7 +10220,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Descrição": {
+			          "Tabela": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -12324,7 +12336,9 @@ cultureInfo en-US
 			      },
 			      "State": "Generated",
 			      "Terms": [
-			        {},
+			        {
+			          "": {}
+			        },
 			        {
 			          "location": {
 			            "Type": "Noun",
