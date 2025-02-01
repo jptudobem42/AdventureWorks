@@ -8,11 +8,11 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.139.1733.0 (24.12)+af51d793b3eacaf90fc70909aa713164bbd22a66
+annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
 
-annotation PBI_QueryOrder = ["DIM_CARTAOCREDITO","DIM_DATES","DIM_CLIENTES","DIM_ENDERECO","DIM_PRODUTOS","FAT_VENDAS","BRG_RAZOESVENDA","DIM_RAZOESVENDA"]
+annotation PBI_QueryOrder = ["DIM_CARTAOCREDITO","DIM_DATES","DIM_CLIENTES","DIM_ENDERECO","DIM_PRODUTOS","FAT_VENDAS","DIM_RAZOESVENDA","AGG_RAZOESVENDA"]
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
 ref table DIM_CARTAOCREDITO
 ref table DIM_DATES
@@ -21,8 +21,12 @@ ref table DIM_ENDERECO
 ref table DIM_PRODUTOS
 ref table FAT_VENDAS
 ref table _Medidas
-ref table BRG_RAZOESVENDA
 ref table DIM_RAZOESVENDA
+ref table AGG_RAZOESVENDA
+ref table DOC_COLUNAS
+ref table DOC_MEDIDAS
+ref table DOC_TABELAS
+ref table DOC_RELACIONAMENTOS
 
 ref cultureInfo en-US
 

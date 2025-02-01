@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 25,
+        "x": 987.5,
         "y": 0
       },
       "nodes": [
         {
           "location": {
             "x": 755.12811655026258,
-            "y": 486.68058269754545
+            "y": 593.82902019754545
           },
           "nodeIndex": "DIM_CARTAOCREDITO",
           "nodeLineageTag": "206136e1-3353-4f81-ac75-add28d1d9907",
@@ -19,12 +19,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
             "x": 0,
-            "y": 486.51145445774131
+            "y": 593.65989195774137
           },
           "nodeIndex": "DIM_CLIENTES",
           "nodeLineageTag": "0ed1cb6e-2df8-423a-b854-073f079bf7b3",
@@ -32,54 +32,15 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 1016.540114231349,
-            "y": 486.78131759143082
-          },
-          "nodeIndex": "DIM_DATES",
-          "nodeLineageTag": "193644d9-c4c0-413c-b1cc-bc1d7754e455",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 6
-        },
-        {
-          "location": {
-            "x": 505.37176054311612,
-            "y": 485.81263518286164
-          },
-          "nodeIndex": "DIM_ENDERECO",
-          "nodeLineageTag": "4f8abbc1-59e4-435a-bb16-c1c4e1df7d06",
-          "size": {
-            "height": 224,
-            "width": 234
-          },
-          "zIndex": 3
-        },
-        {
-          "location": {
-            "x": 252.54011423134898,
-            "y": 486.17653313845244
-          },
-          "nodeIndex": "DIM_PRODUTOS",
-          "nodeLineageTag": "b5b83b2c-706b-471b-82ad-95e6f1460def",
-          "size": {
-            "height": 296,
-            "width": 234
-          },
           "zIndex": 4
         },
         {
           "location": {
-            "x": 642.50918763338348,
-            "y": 16.25
+            "x": 1016.540114231349,
+            "y": 593.92975509143082
           },
-          "nodeIndex": "FAT_VENDAS",
-          "nodeLineageTag": "9d57457e-21a5-4aa6-8434-90be4dbc310f",
+          "nodeIndex": "DIM_DATES",
+          "nodeLineageTag": "193644d9-c4c0-413c-b1cc-bc1d7754e455",
           "size": {
             "height": 300,
             "width": 234
@@ -88,8 +49,47 @@
         },
         {
           "location": {
-            "x": 1208.040114231349,
-            "y": 41.25
+            "x": 505.37176054311612,
+            "y": 592.96107268286164
+          },
+          "nodeIndex": "DIM_ENDERECO",
+          "nodeLineageTag": "4f8abbc1-59e4-435a-bb16-c1c4e1df7d06",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 252.54011423134898,
+            "y": 593.32497063845244
+          },
+          "nodeIndex": "DIM_PRODUTOS",
+          "nodeLineageTag": "b5b83b2c-706b-471b-82ad-95e6f1460def",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 642.50918763338348,
+            "y": 123.3984375
+          },
+          "nodeIndex": "FAT_VENDAS",
+          "nodeLineageTag": "9d57457e-21a5-4aa6-8434-90be4dbc310f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1336.790114231349,
+            "y": 138.3984375
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "566912d1-a51c-4581-8e9d-ce80eb81e8d6",
@@ -97,31 +97,83 @@
             "height": 72,
             "width": 234
           },
-          "zIndex": 0,
+          "zIndex": 1,
           "expandedHeight": 200
         },
         {
           "location": {
-            "x": 1298.540114231349,
-            "y": 163.01565879571541
+            "x": 1317.040114231349,
+            "y": 639.66409629571535
           },
-          "nodeIndex": "BRG_RAZOESVENDA",
-          "nodeLineageTag": "6b94b1b2-6dd1-4476-bd7c-2fe9a04d298e",
+          "nodeIndex": "DIM_RAZOESVENDA",
+          "nodeLineageTag": "269350f7-da34-46cf-92c5-0906d043dd61",
           "size": {
-            "height": 152,
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1358.540114231349,
+            "y": 267.41409629571541
+          },
+          "nodeIndex": "AGG_RAZOESVENDA",
+          "nodeLineageTag": "663bab91-8722-4a9e-afc2-d34a17effa28",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1867.540114231349,
+            "y": 50.53909629571541
+          },
+          "nodeIndex": "DOC_COLUNAS",
+          "nodeLineageTag": "6895c989-28ee-4145-b8ce-5f0af3818b78",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 1358.290114231349,
-            "y": 412.51565879571541
+            "x": 1872.790114231349,
+            "y": 288.35159629571541
           },
-          "nodeIndex": "DIM_RAZOESVENDA",
-          "nodeLineageTag": "269350f7-da34-46cf-92c5-0906d043dd61",
+          "nodeIndex": "DOC_MEDIDAS",
+          "nodeLineageTag": "2b52a211-93bd-41a6-85fc-3a30405faa91",
           "size": {
-            "height": 128,
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2211.790114231349,
+            "y": 47.57034629571541
+          },
+          "nodeIndex": "DOC_TABELAS",
+          "nodeLineageTag": "6e27a255-493d-44d4-8b39-3889e9aeb934",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2213.290114231349,
+            "y": 277.64847129571541
+          },
+          "nodeIndex": "DOC_RELACIONAMENTOS",
+          "nodeLineageTag": "90adac5f-793e-4b9d-a57c-7693a00332cb",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0
@@ -264,11 +316,52 @@
       "nodes": [
         {
           "location": {
-            "x": 456,
-            "y": 156
+            "x": 10.054054054054063,
+            "y": 10.054054054054063
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "566912d1-a51c-4581-8e9d-ce80eb81e8d6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 15.770270270270288,
+            "y": 328.64864864864865
+          },
+          "nodeIndex": "AGG_RAZOESVENDA",
+          "nodeLineageTag": "663bab91-8722-4a9e-afc2-d34a17effa28",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "Auxiliares",
+      "zoomValue": 98.666666666666671,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 3
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 102,
+            "y": 5
+          },
+          "nodeIndex": "DOC_COLUNAS",
+          "nodeLineageTag": "6895c989-28ee-4145-b8ce-5f0af3818b78",
           "size": {
             "height": 300,
             "width": 234
@@ -277,19 +370,45 @@
         },
         {
           "location": {
-            "x": 723,
-            "y": 157
+            "x": 659,
+            "y": 22
           },
-          "nodeIndex": "BRG_RAZOESVENDA",
-          "nodeLineageTag": "6b94b1b2-6dd1-4476-bd7c-2fe9a04d298e",
+          "nodeIndex": "DOC_MEDIDAS",
+          "nodeLineageTag": "2b52a211-93bd-41a6-85fc-3a30405faa91",
           "size": {
-            "height": 152,
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 664,
+            "y": 407
+          },
+          "nodeIndex": "DOC_RELACIONAMENTOS",
+          "nodeLineageTag": "90adac5f-793e-4b9d-a57c-7693a00332cb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 390,
+            "y": 417
+          },
+          "nodeIndex": "DOC_TABELAS",
+          "nodeLineageTag": "6e27a255-493d-44d4-8b39-3889e9aeb934",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0
         }
       ],
-      "name": "Auxiliares",
+      "name": "Documentação",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
@@ -297,6 +416,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Auxiliares",
+  "selectedDiagram": "Documentação",
   "defaultDiagram": "All tables"
 }

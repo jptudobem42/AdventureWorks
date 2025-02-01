@@ -1,6 +1,8 @@
+/// Tabela auxiliar para organização das medidas.
 table _Medidas
 	lineageTag: 566912d1-a51c-4581-8e9d-ce80eb81e8d6
 
+	/// Calcula o valor total bruto dos pedidos.
 	measure '$ Valor de vendas bruto' = ```
 			SUM(FAT_VENDAS[REVENUE]) 
 			```
@@ -8,6 +10,7 @@ table _Medidas
 		displayFolder: 01. Valores
 		lineageTag: b225a410-1c46-43db-81fa-c47abe74a399
 
+	/// Calcula a quantidade total de pedidos realizados.
 	measure '# Qtd. de pedidos' =
 			
 			DISTINCTCOUNT(FAT_VENDAS[SALESORDERID])
@@ -15,6 +18,7 @@ table _Medidas
 		displayFolder: 02. Quantidades
 		lineageTag: 7a20076f-ccfd-4ced-943f-e0281084c67b
 
+	/// Calcula a quantidade total dos produtos vendidos.
 	measure '# Qtd. de itens comprados' =
 			
 			SUM(FAT_VENDAS[ORDERQTY])
@@ -22,6 +26,7 @@ table _Medidas
 		displayFolder: 02. Quantidades
 		lineageTag: af619031-7202-4258-b0b4-59ebb6b9d0c1
 
+	/// Calcula o ticket médio dos pedidos.
 	measure '$ Ticket médio' =
 			
 			DIVIDE(
@@ -33,6 +38,7 @@ table _Medidas
 		displayFolder: 01. Valores
 		lineageTag: 39f8b4b1-530b-46f6-8242-b811de990cf7
 
+	/// Calcula o ticket médio dos produtos vendidos.
 	measure '$ Ticket médio por item' =
 			
 			DIVIDE(
@@ -44,6 +50,7 @@ table _Medidas
 		displayFolder: 01. Valores
 		lineageTag: 54cb6839-d48f-47cc-8809-c47d9f7e7707
 
+	/// Faz o rank de clientes por valor de venda negociada.
 	measure '# Ranking de vendas por clientes' = ```
 			
 			VAR vOuro = UNICHAR(129351)
@@ -73,58 +80,33 @@ table _Medidas
 		displayFolder: 02. Quantidades
 		lineageTag: d19012d1-ac53-425e-8a7a-0d5f3e1d596a
 
+	/// Calcula o valor negociado das vendas, com os descontos subtraídos.
 	measure '$ Valor de vendas negociado' = SUM(FAT_VENDAS[REVENUE_DISCOUNTED])
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		displayFolder: 01. Valores
 		lineageTag: ff67d053-2d33-4a50-9f1f-e3af23afb9c6
 
-	measure '# Qtd. de pedidos - Promotion' =
-			
-			SUM(FAT_VENDAS[REASON_ON_PROMOTION])
-		formatString: 0
-		displayFolder: 02. Quantidades
-		lineageTag: afe4685a-9df3-4763-bf36-dbf0ad28809b
-
-	measure '# Ranking de vendas por cidade' = ```
-			
-			VAR vRank = 
-			    RANKX(
-			        ALL(DIM_ENDERECO[NOME_CIDADE])
-			        , [$ Valor de vendas negociado]
-			        ,,, Dense
-			    ) 
-			
-			RETURN
-			
-			IF(
-			    HASONEVALUE(DIM_ENDERECO[NOME_CIDADE])
-			    , vRank
-			    , BLANK()
-			)
-			```
-		formatString: 0
-		displayFolder: 02. Quantidades
-		lineageTag: a358d0d9-096e-4bb2-9a96-5677f1be2ec1
-
+	/// Medida dummy
 	measure 'Label Placeholder' = -1
 		formatString: 0
 		displayFolder: 00. Auxiliares
 		lineageTag: b3516604-a016-4f83-9350-fddfc5953f5e
 
-	measure 'Label produtos bart chart' = ```
+	/// Rótulo de dados para o gráfico de vendas por região.
+	measure 'Label cidades bart chart' = ```
 			
 			VAR _ItemName = 
-			SELECTEDVALUE(DIM_PRODUTOS[NOME_PRODTO])
+			SELECTEDVALUE(DIM_ENDERECO[REGIAO])
 			
 			VAR _Valor = [$ Valor de vendas negociado]
 			
 			VAR _Formato = 
 			SWITCH(
 			    TRUE(),
-			    _Valor >= 1000000000, "$#,#0,,,.00B;-#,$#0,,,.00B",
-			    _Valor >= 1000000, "$#,#0,,.00M;-#,$#0,,.00M",
-			    _Valor >= 1000, "$#,#0,.00K;-#,$#0,.00K",
-			    "$#,0.00;-$#,0.00"
+			    ABS(_Valor) >= 1E9, "$#,#0,,,.00 Bi"
+			    , ABS(_Valor) >= 1E6, "$#,#0,,.00 Mi"
+			    , ABS(_Valor) >= 1E3, "$#,#0,.00 K"
+			    , "$#,0.00"
 			)
 			
 			VAR _Value = 
@@ -136,10 +118,13 @@ table _Medidas
 		displayFolder: 00. Auxiliares
 		lineageTag: 093589b2-2143-46bb-87c8-a24e614b0847
 
-	measure '$ Valor unitário do produto' = MAX(FAT_VENDAS[UNITPRICE])
+	/// Calcula o valor total das vendas por motivo.
+	measure '$ Valor de vendas negociado por motivo' =
+			
+			SUM(AGG_RAZOESVENDA[REVENUE_DISCOUNTED])
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: 01. Valores
-		lineageTag: 11089039-a45f-4489-937b-25010a0c074f
+		lineageTag: 46e4fe7c-db42-4c88-8e5a-906918ac8a69
 
 	column Value
 		isHidden

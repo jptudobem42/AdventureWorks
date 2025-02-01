@@ -1,3 +1,4 @@
+/// Dimensão contendo informações sobre os endereços de envio.
 table DIM_ENDERECO
 	lineageTag: 4f8abbc1-59e4-435a-bb16-c1c4e1df7d06
 
@@ -28,6 +29,7 @@ table DIM_ENDERECO
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Nome da cidade onde o pedido foi entregue.
 	column NOME_CIDADE
 		dataType: string
 		lineageTag: 86feb068-b73d-4be1-89ef-00c4f5ff01da
@@ -37,6 +39,7 @@ table DIM_ENDERECO
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Nome do estado onde o pedido foi entregue.
 	column NOME_ESTADO
 		dataType: string
 		lineageTag: 13970e03-f809-4953-980a-232f1981e5a2
@@ -46,6 +49,7 @@ table DIM_ENDERECO
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Nome do país onde o pedido foi entregue.
 	column NOME_PAIS
 		dataType: string
 		lineageTag: 4e28e0bc-30b9-41f3-9acb-8ccfa7a779ee
@@ -55,7 +59,8 @@ table DIM_ENDERECO
 
 		annotation SummarizationSetBy = Automatic
 
-	column REGIAO = DIM_ENDERECO[NOME_PAIS] & " - " & DIM_ENDERECO[NOME_ESTADO] & " - " & DIM_ENDERECO[NOME_CIDADE]
+	/// Concatenação da cidade, estado e país.
+	column REGIAO = DIM_ENDERECO[NOME_CIDADE] & ", " & DIM_ENDERECO[NOME_ESTADO] & " - " & DIM_ENDERECO[NOME_PAIS]
 		lineageTag: 11ff3821-924a-4e79-b1e9-cd7d4ae40958
 		summarizeBy: none
 

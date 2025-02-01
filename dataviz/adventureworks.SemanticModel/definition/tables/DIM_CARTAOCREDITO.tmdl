@@ -1,3 +1,4 @@
+/// Dimensão contendo informações sobre os cartões de crédito.
 table DIM_CARTAOCREDITO
 	lineageTag: 206136e1-3353-4f81-ac75-add28d1d9907
 
@@ -19,6 +20,7 @@ table DIM_CARTAOCREDITO
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Bandeira do cartão utilizada nos pedidos.
 	column CARDTYPE
 		dataType: string
 		lineageTag: 00fac1f0-4ed9-4b82-a463-94228f1f9125
