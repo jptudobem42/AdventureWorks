@@ -73,19 +73,19 @@ Para esse projeto, foi elaborado o modelo conceitual abaixo representando a estr
 
 ```plaintext
                 +-------------------+  +-------------------+   
-                |   dim_produtos    |  |      dim_dates    |
-                +-------------------+  +-------------------+
-                            |               |
-                            |               |
-                            |               |
-                            ▼               ▼
-+-------------------+     +---------------------+       +----------------+
-|   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |
-+-------------------+     +---------------------+       +----------------+
-
-+-------------------+ 
-| agg_razoesvenda   | 
-+-------------------+ 
+                |   dim_produtos    |  |      dim_dates    |────────────────────
+                +-------------------+  +-------------------+                   |
+                            |               |                                  |
+                            |               |                                  |
+                            |               |                                  | 
+                            ▼               ▼                                  |
++-------------------+     +---------------------+       +----------------+     |
+|   dim_clientes    |────▶|      fat_vendas     |◀─────|  dim_endereco  |     | 
++-------------------+     +---------------------+       +----------------+     |
+                                                                               |
++-------------------+     +-------------------+                                |
+| dim_razoesvenda   |────▶|  agg_razoesvenda |◀────────────────────────────── |
++-------------------+     +-------------------+
 ```
 ---
 ### **Descrição das Entidades**
@@ -103,6 +103,7 @@ Contém informações transacionais sobre vendas, como:
 - **Clientes:** Informações dos clientes que realizaram as compras, como nome e localização.
 - **Endereço:** Localização dos clientes, incluindo cidade, estado e país.
 - **Cartão de Crédito:** Informações sobre o tipo e uso de cartões de crédito nas vendas.
+- **Razões das Vendas:** Contém os motivos que levaram os clientes a fazer os pedidos.
 - **Datas:** Dimensão de tempo com informações granulares sobre datas.
 
 #### **Dimensão de Razões (dim_razoesvenda):**
@@ -122,14 +123,14 @@ Tabela que realiza a agregação dos motivos de venda no nível de cada ordem de
 
 O projeto foi estruturado em três camadas principais:
 
-1. **Camada de Staging:**  
+1. **Camada Staging:**  
    Processa e organiza os dados brutos vindos das tabelas transacionais. Realiza renomeações, padronizações e pequenas transformações.
 
 2. **Camada Intermediária (Intermediate):**  
    Realiza transformações mais complexas, como agregações e cruzamentos entre tabelas.  
    Exemplo: `int_salesreason_agg`, que consolida os motivos de venda em formato binário.
 
-3. **Camada de Marts:**  
+3. **Camada Marts:**  
    Modelo dimensional com tabelas fato e dimensões otimizadas para análises.  
    Exemplo: `fat_vendas`, que consolida informações de pedidos, produtos, clientes e motivos de venda.
 
