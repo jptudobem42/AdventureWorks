@@ -26,3 +26,12 @@ relationship e6701d0e-1652-b951-a29f-b4d9dfc7afea
 	fromColumn: AGG_RAZOESVENDA.ORDERDATE
 	toColumn: DIM_DATES.DATE_DAY
 
+relationship efe4e9c7-4b76-9196-55bb-474a4d9d84d9
+	fromColumn: DOC_COLUNAS.Table
+	toColumn: DOC_TABELAS.Name
+
+relationship af577d7e-b8e9-086d-fb0f-0628dce11c9c
+	crossFilteringBehavior: bothDirections
+	fromColumn: DOC_MEDIDAS.Table
+	toColumn: DOC_TABELAS.Name
+

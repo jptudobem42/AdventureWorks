@@ -1,3 +1,4 @@
+/// Dimensão contendo informações sobre os produtos vendidos.
 table DIM_PRODUTOS
 	lineageTag: b5b83b2c-706b-471b-82ad-95e6f1460def
 
@@ -19,6 +20,7 @@ table DIM_PRODUTOS
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Nome do produto.
 	column NOME_PRODTO
 		dataType: string
 		lineageTag: d99c4582-166d-47c6-996b-66581d3bcb35
@@ -35,6 +37,7 @@ table DIM_PRODUTOS
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Cor do produto.
 	column COLOR
 		dataType: string
 		lineageTag: dff368ed-e382-465d-ae5b-9f64245e3013
@@ -51,6 +54,8 @@ table DIM_PRODUTOS
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Subcategoria do produto.
+	/// 
 	column NOME_SUBCATEGORIA
 		dataType: string
 		lineageTag: d8ae98e6-3df4-42f8-808f-c089e9bcb298
@@ -59,6 +64,8 @@ table DIM_PRODUTOS
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Categoria do produto.
+	/// 
 	column NOME_CATEGORIA
 		dataType: string
 		lineageTag: f017e052-226f-4bea-83f2-623d44909d4c
@@ -67,6 +74,7 @@ table DIM_PRODUTOS
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Modelo do produto.
 	column NOME_MODELO
 		dataType: string
 		lineageTag: 751ce900-f78b-4f21-b164-98c01c9f7faa

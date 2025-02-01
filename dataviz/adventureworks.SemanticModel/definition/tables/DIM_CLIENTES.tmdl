@@ -1,3 +1,4 @@
+/// Dimensão contendo informações detalhadas sobre os clientes, incluindo lojas e pessoas físicas, e indicando se possuem pedidos associados.
 table DIM_CLIENTES
 	lineageTag: 0ed1cb6e-2df8-423a-b854-073f079bf7b3
 
@@ -19,6 +20,7 @@ table DIM_CLIENTES
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Nome completo dos clientes.
 	column FULLNAME
 		dataType: string
 		lineageTag: 256bb951-f373-4415-93dd-ba6cd23b3f49
@@ -35,6 +37,7 @@ table DIM_CLIENTES
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Tipo do cliente, SC = Store Contact, IN = Individual (retail) customer, SP = Sales person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact
 	column PERSONTYPE
 		dataType: string
 		lineageTag: b9f5b76c-05bc-44b1-aadc-c78420d8c6cd

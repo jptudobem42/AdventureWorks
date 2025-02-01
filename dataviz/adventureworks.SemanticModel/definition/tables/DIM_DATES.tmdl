@@ -1,3 +1,4 @@
+/// Tabela calendário.
 table DIM_DATES
 	lineageTag: 193644d9-c4c0-413c-b1cc-bc1d7754e455
 	dataCategory: Time

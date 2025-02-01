@@ -1,3 +1,4 @@
+/// Dimensão que armazena os motivos de venda relacionados às transações. Esta dimensão permite analisar e filtrar vendas por motivos específicos, como promoções ou descontos.
 table DIM_RAZOESVENDA
 	lineageTag: 269350f7-da34-46cf-92c5-0906d043dd61
 
@@ -9,6 +10,7 @@ table DIM_RAZOESVENDA
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Razão pelo qual o pedido foi feito.
 	column NOMERAZAO
 		dataType: string
 		lineageTag: 1a70cef8-a94b-43aa-ae20-2bf10fbf55ae
