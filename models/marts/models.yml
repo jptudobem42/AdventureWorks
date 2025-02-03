@@ -61,8 +61,9 @@ models:
         description: "Receita total calculada como (unitprice * orderqty)."
         tests:
           - not_null
-    tests:
-      - validate_revenue_2011
+          - validate_revenue_by_year:
+              year: 2011
+              expected_value: 12646112.16
 
   - name: dim_cartaocredito
     description: "Dimensão contendo informações sobre os cartões de crédito."
